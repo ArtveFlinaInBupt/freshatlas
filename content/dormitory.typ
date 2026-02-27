@@ -111,7 +111,7 @@
     在 S6 没建好时曾经是女寝，改男寝后浴室隔板没拆
   ],
   [#male[雁北 D1]\ #male[雁北 C]],
-  good[6 层\ 有电梯#fn(2)],
+  good[6 层\ 有电梯#fn(3)],
   tcell(rowspan: 2, good[层浴]),
   tcell(rowspan: 2)[
     单寝面积略小于雁南
