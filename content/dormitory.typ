@@ -282,7 +282,7 @@
 
   沙河-cell(body: [沙河校区]),
   [#male[雁南 S2\ 雁南 S3]\ #mixed[雁南 S4]\ #female[雁南 S5]\ #mixed[（25 级）]],
-  [本科生\ 硕士研究生\ 博士研究生#quest],
+  [本科生\ 硕士研究生\ 博士研究生],
   neutral[6],
   neutral[
     床床#hide[#backlink("about:blank")[]] \
