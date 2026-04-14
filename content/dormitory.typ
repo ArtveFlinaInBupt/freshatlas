@@ -118,6 +118,35 @@
 
   本部-cell(rowspan: 9, body: [西土城\ 校区\ （校本部）]),
 
+  mixed[学 8],
+  [本科生\ 博士研究生],
+  tcell(rowspan: 2, good[4]),
+  tcell(rowspan: 2, good[上床下桌]),
+  tcell(rowspan: 2, neutral[独卫]),
+  tcell(rowspan: 2, good[有]),
+  tcell(rowspan: 2, neutral[12 层\ 2 部电梯]),
+  tcell(rowspan: 2, good[正常#quest]),
+  good[近],
+  neutral[北门柜],
+  [#neutral[近]\ #neutral[部分寝室有独浴]\ #bad[但无热水]],
+  neutral[中],
+  neutral[中],
+  tcell(rowspan: 2, [#quest\ 早于 2001]),
+  [1200],
+  tcell(rowspan: 2, [
+    部分房间地漏不可用，楼板渗水，搭配独浴和停水忘关水龙头有奇效
+
+    有超过 4 个独立的真实住户信源认为学 8 环境毋庸置疑好于新建的学 2，笔者并不理解为何，但还是尊重其意愿更新到前面
+  ]),
+  female[学 4\ （部分）],
+  [博士研究生],
+  neutral[中],
+  neutral[北门柜\ 西门柜],
+  [#neutral[中]\ #neutral[部分寝室有独浴]\ #bad[但无热水]],
+  neutral[中],
+  bad[远],
+  [850],
+
   tcell(rowspan: 2, male[学 13]),
   [博士研究生],
   good[2],
@@ -194,31 +223,6 @@
   [
     单寝面积很小
   ],
-
-  mixed[学 8],
-  [本科生\ 博士研究生],
-  tcell(rowspan: 2, good[4]),
-  tcell(rowspan: 2, good[上床下桌]),
-  tcell(rowspan: 2, neutral[独卫]),
-  tcell(rowspan: 2, good[有]),
-  tcell(rowspan: 2, neutral[12 层\ 2 部电梯]),
-  tcell(rowspan: 2, good[正常#quest]),
-  good[近],
-  neutral[北门柜],
-  [#neutral[近]\ #neutral[部分寝室有独浴]\ #bad[但无热水]],
-  neutral[中],
-  neutral[中],
-  tcell(rowspan: 2, [#quest\ 早于 2001]),
-  [1200],
-  tcell(rowspan: 2, [部分房间地漏不可用，楼板渗水，搭配独浴和停水忘关水龙头有奇效]),
-  female[学 4\ （部分）],
-  [博士研究生],
-  neutral[中],
-  neutral[北门柜\ 西门柜],
-  [#neutral[中]\ #neutral[部分寝室有独浴]\ #bad[但无热水]],
-  neutral[中],
-  bad[远],
-  [850],
 
   [#mixed[学 3]\ #male[学 5]],
   [本科生\ 硕士研究生],
@@ -387,7 +391,7 @@
 
 表格内只讨论绝大多数宿舍配置，不讨论占比较少的特殊房间。
 
-本文档旨在提供信息而非排个高低，因此不接受任何有关排名顺序的建议和批评——几乎所有人都觉得别人住得比自己好，学 3, 5, 8, 9, 10, 11, 29 甚至沙河雁北中的任何一个放前面都有人不满意，被喷得实在烦。
+本文档旨在提供信息而非斗个高低，因此不接受类似“某某宿舍排高了，应该往后放”的建议和批评——几乎所有人都觉得别人住得比自己好，笔者收到的大部分反馈只是纯粹的发牢骚。
 
 #{
   show: align.with(center + horizon)
