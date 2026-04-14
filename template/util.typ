@@ -8,7 +8,10 @@
 #let unit = unit => $upright(#unit)$
 #let qty = (num, unit) => $#num thin upright(#unit)$
 
-#let subtable(..args) = tcell(inset: 0pt, table(align: left + horizon, ..args))
+#let subtable(..args) = tcell(
+  inset: 0pt,
+  table(align: left + horizon, inset: (x: .5em, y: .75em), ..args),
+)
 
 #let proper = {
   let thickness = .25em

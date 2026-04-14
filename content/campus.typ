@@ -202,6 +202,7 @@
 #let 校区说明表格 = table(
   columns: (auto, auto, auto, 30em),
   align: (x, y) => if x == 3 and y != 0 { left } else { center } + horizon,
+  inset: (x: .5em, y: .75em),
   table.header[*校区名称*][*图例*][*地址*][*介绍*],
 
   [西土城校区\ （校本部）],
@@ -214,11 +215,16 @@
   ][
     位于三环以内，紧邻北三环，距二环（铁路#proper[北京北站]）约 #qty[2][km]。周边有超多商圈。
 
-    与#proper[北师大]仅一街之隔；距#("北航", "央财", "交大", "法大", "电影学院").map(proper).join("、")、#proper[北大医学部]（#proper[北医三院]）*等*均短于 #qty[3][km]；北航以北是学院路 8 校。
+    与#proper[北师大]隔街相望；距#("北航", "央财", "交大", "法大", "电影学院").map(proper).join("、")、#proper[北大医学部]（#proper[北医三院]）*等*均短于 #qty[3][km]；北航以北是学院路 8 校。
 
-    距#proper[字节跳动（抖音）总部]约 #qty[1.5][km]，距#proper[中关村]核心区约 #qty[5][km]。
+    距#proper[字节跳动总部（抖音大楼）]约 #qty[1.5][km]，距#proper[中关村]核心区约 #qty[5][km]。
 
     距地铁#proper[蓟门桥]站约 #qty[200][m]，距地铁#("北太平庄", "西土城", "大钟寺").map(it => proper(it) + "站").join("、")、#proper[四道口]站（在建）均短于 #qty[1.5][km]，涉及地铁 #get-subway(10), #get-subway(12), #get-subway(13), #get-subway(19), #get-subway(27)，线路非常优质。
+  ][
+    校内的连锁品牌：
+
+    - 餐饮：蜜雪冰城、瑞幸咖啡、麦当劳、醉面、虎头军煎饼、泸溪河桃酥
+    - 零售：物美（多点）超市
   ],
 
   [沙河校区],
@@ -234,6 +240,11 @@
     距地铁#get-subway(27)#proper[沙河]站、#proper[沙河高教园]站均短于 #qty[1][km]。
 
     #沙河-styled[沙河校区]和#本部-styled[西土城校区]之间单程乘地铁约 #qty[1][h] 许（列车运行 #qty[40][min]），乘免费班车最快约 #qty[35][min]，实际耗时可能因路况增加。
+  ][
+    校内的连锁品牌：
+
+    - 餐饮：蜜雪冰城、库迪咖啡、KFC、必胜客、醉面、虎头军煎饼
+    - 零售：天猫超市
   ],
 
   [海南校区],
@@ -269,7 +280,7 @@
         tcell(rowspan: 3)[*学院*],
         tcell(colspan: 5)[*校区*（宿舍）],
         tcell(rowspan: 3)[*校区*\ （学院楼）],
-        tcell(rowspan: 3)[*信息来源*],
+        tcell(rowspan: 3)[*依据*],
         tcell(colspan: 4)[本科生],
         tcell(rowspan: 2)[研究生#fn(1)],
         [大一], [大二], [大三], [大四],
