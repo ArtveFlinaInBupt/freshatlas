@@ -30,7 +30,7 @@
   (
     name: "计算机学院（国家示范性软件学院）",
     code: 313,
-    fill: (沙河-cell(),) * 2 + (undetermined-cell(body: [未知]),) * 2 + (本部-cell(),),
+    fill: (沙河-cell(),) * 3 + (undetermined-cell(body: [未知]),) + (本部-cell(),),
     dept: ("本部", "教三"),
     source: [
       23 级大二前回迁 \
