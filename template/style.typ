@@ -19,7 +19,7 @@
 
   set document(author: ("fa_555 <fa_555@foxmail.com>",), date: datetime.today())
 
-  set text(font: font.serif)
+  set text(font: font.serif, fallback: false)
   set par(leading: .5em, spacing: .85em, justify: true)
 
   show highlight: it => underline(offset: .3em, text(fill: red, weight: "black", it))
@@ -37,7 +37,13 @@
 
   show raw: set text(font: font.mono)
 
-  set list(indent: 1em)
+  set list(
+    indent: 1em,
+    marker: ([•], [◦], [⁃]).map(it => {
+      box(width: 1em, align(center, it))
+      h(-.5em)
+    }),
+  )
 
   show link: set text(fill: colors.link)
 
