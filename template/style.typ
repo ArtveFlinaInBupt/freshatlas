@@ -24,12 +24,10 @@
 
   show highlight: it => underline(offset: .3em, text(fill: red, weight: "black", it))
 
-  show heading.where(level: 1): it => {
-    pagebreak(weak: true)
-    align(center, it)
-    v(.5em)
-  }
+  show heading: align.with(center)
+  show heading.where(level: 1): it => it + v(.5em)
 
+  set grid.vline(stroke: stroke)
   set table(stroke: stroke, align: center + horizon)
 
   show math.equation: set text(font: font.math)
