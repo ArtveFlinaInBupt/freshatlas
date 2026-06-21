@@ -2,8 +2,8 @@
 #import "/template/style.typ": show-body
 #import "/template/model.typ": backlink
 
-#import "campus-cell.typ": *
-#import "freshman-hint.typ": *
+#import "model/campus-cell.typ": *
+#import "model/freshman-hint.typ": *
 
 #show: show-body
 

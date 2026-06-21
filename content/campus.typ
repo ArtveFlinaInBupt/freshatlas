@@ -2,8 +2,8 @@
 #import "/template/model.typ": backlink
 #import "/template/style.typ": show-body
 
-#import "subway.typ": get-subway
-#import "campus-cell.typ": *
+#import "model/subway.typ": get-subway
+#import "model/campus-cell.typ": *
 
 #show: show-body
 
