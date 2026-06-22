@@ -1,26 +1,25 @@
 #import "/template/util.typ": *
 
 #let freshman-hint = [
-  #show: body => {
-    set text(fill: red.darken(25%))
-    set list(spacing: .75em, tight: false)
-    align(center, block(
-      stroke: (
-        paint: red.darken(25%),
-        thickness: 1pt,
-        dash: "dotted",
-      ),
-      radius: 1em,
-      inset: (right: 1em, y: .75em),
-      fill: red.lighten(95%),
-      align(left, body),
-    ))
-  }
+  #set text(fill: red.darken(25%))
 
-  #align(center, {
-    text(size: 1.25em)[#datetime.today().display("[year]") 开学季 Special：*本科新生可能需要的信息*]
-    v(-.25em)
-  })
+  #show: align.with(center)
+  #show: block.with(
+    stroke: (
+      paint: red.darken(25%),
+      thickness: 1pt,
+      dash: "dotted",
+    ),
+    radius: 1em,
+    inset: (right: 1em, y: .75em),
+    fill: red.lighten(95%),
+  )
+  #show: align.with(left)
+
+  #align(center, text(
+    size: 1.25em,
+    [#datetime.today().display("[year]") 开学季 Special：*本科新生可能需要的信息*],
+  ))
 
   - 关于家具、户型参数
 

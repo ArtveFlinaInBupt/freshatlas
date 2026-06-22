@@ -3,13 +3,13 @@
 
 #show: show-body
 
-#let unknown-colour = yellow.darken(25%)
-#let placement-colour = olive.darken(25%)
-#let level-colour = orange.darken(25%)
+#let unknown-color = yellow.darken(25%)
+#let placement-color = olive.darken(25%)
+#let level-color = orange.darken(25%)
 
-#let unknown = text.with(fill: unknown-colour)
-#let placement = text.with(fill: placement-colour)
-#let level = text.with(fill: level-colour)
+#let unknown = text.with(fill: unknown-color)
+#let placement = text.with(fill: placement-color)
+#let level = text.with(fill: level-color)
 
 #let quest = unknown[?]
 #let 两者 = box(context {
@@ -17,7 +17,7 @@
   let (width, height) = measure(body)
   text(
     fill: gradient
-      .linear(placement-colour, level-colour, angle: -calc.atan(width / height))
+      .linear(placement-color, level-color, angle: -calc.atan(width / height))
       .sharp(2),
     body,
   )

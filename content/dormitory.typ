@@ -7,25 +7,25 @@
 
 #show: show-body
 
-#let male-colour = eastern.darken(5%)
-#let female-colour = fuchsia.darken(5%)
-#let mixed-colour = color.mix(male-colour, female-colour)
+#let male-color = eastern.darken(5%)
+#let female-color = fuchsia.darken(5%)
+#let mixed-color = color.mix(male-color, female-color)
 
-#let good-colour = green.darken(25%)
-#let bad-colour = red.darken(25%)
-#let neutral-colour = blue
-#let unknown-colour = yellow.darken(25%)
-#let wip-colour = gray
+#let good-color = green.darken(25%)
+#let bad-color = red.darken(25%)
+#let neutral-color = blue
+#let unknown-color = yellow.darken(25%)
+#let wip-color = gray
 
-#let male = text.with(fill: male-colour)
-#let female = text.with(fill: female-colour)
-#let mixed = text.with(fill: mixed-colour)
+#let male = text.with(fill: male-color)
+#let female = text.with(fill: female-color)
+#let mixed = text.with(fill: mixed-color)
 
-#let good = text.with(fill: good-colour)
-#let bad = text.with(fill: bad-colour)
-#let neutral = text.with(fill: neutral-colour)
-#let unknown = text.with(fill: unknown-colour)
-#let wip = text.with(fill: wip-colour)
+#let good = text.with(fill: good-color)
+#let bad = text.with(fill: bad-color)
+#let neutral = text.with(fill: neutral-color)
+#let unknown = text.with(fill: unknown-color)
+#let wip = text.with(fill: wip-color)
 
 #let quest = unknown[?]
 

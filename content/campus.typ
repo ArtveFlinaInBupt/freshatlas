@@ -7,9 +7,9 @@
 
 #show: show-body
 
-#let secondary-colour = luma(192)
+#let secondary-color = luma(192)
 
-#let secondary = text.with(fill: secondary-colour)
+#let secondary = text.with(fill: secondary-color)
 #let active(body) = text(fill: red)[\[#body\]]
 
 #let data = (
@@ -208,7 +208,7 @@
   [西土城校区\ （校本部）],
   本部-cell(),
   [北京市海淀区\ 西土城路 10 号],
-  subtable[
+  subtable(inset: (x: .5em, y: .75em))[
     自 1955 年建校以来的主校区，位于北京城区，交通十分便利。
 
     近几年正在大力活跃翻修，几个最差的寝室楼一跃而上成为了如今最好的。
@@ -230,7 +230,7 @@
   [沙河校区],
   沙河-cell(),
   [北京市昌平区\ 沙河高教园区],
-  subtable[
+  subtable(inset: (x: .5em, y: .75em))[
     2018 年起全面投入使用的新校区，位于北京郊区，生活环境较优渥。
 
     本校区与周边其他大学的校园都在活跃建设中。

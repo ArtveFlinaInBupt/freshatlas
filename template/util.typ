@@ -1,4 +1,5 @@
 #import table.cell as tcell
+#import "model.typ": stroke
 
 #let disclaimer = [不对任何信息提供正确性保证。编者并非全能神，信息从普遍共识、校内公开数据与师生口中整合得到，可能有错误。]
 
@@ -10,7 +11,11 @@
 
 #let subtable(..args) = tcell(
   inset: 0pt,
-  table(align: left + horizon, inset: (x: .5em, y: .75em), ..args),
+  table(
+    align: left + horizon,
+    stroke: (x, y) => if x != 0 { (left: stroke) } + if y != 0 { (top: stroke) },
+    ..args
+  ),
 )
 
 #let proper = {

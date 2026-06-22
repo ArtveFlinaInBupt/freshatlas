@@ -20,20 +20,22 @@
   set document(author: ("fa_555 <fa_555@foxmail.com>",), date: datetime.today())
 
   set text(font: font.serif, fallback: false)
-  set par(leading: .5em, spacing: .85em, justify: true)
-
-  show highlight: it => underline(offset: .3em, text(fill: red, weight: "black", it))
+  set par(leading: .5em, spacing: .75em, justify: true)
 
   show heading: align.with(center)
   show heading.where(level: 1): it => it + v(.5em)
 
+  set grid.hline(stroke: stroke)
   set grid.vline(stroke: stroke)
+
+  set table.hline(stroke: stroke)
+  set table.vline(stroke: stroke)
   set table(stroke: stroke, align: center + horizon)
 
-  show math.equation: set text(font: font.math)
+  show math.equation: set text(font: font.math + font.serif, fallback: false)
   show math.equation.where(block: false): it => math.display(it)
 
-  show raw: set text(font: font.mono)
+  show raw: set text(font: font.mono + font.sans, fallback: false)
 
   set list(
     indent: 1em,
@@ -41,6 +43,7 @@
       box(width: 1em, align(center, it))
       h(-.5em)
     }),
+    spacing: .75em,
   )
 
   show link: set text(fill: colors.link)

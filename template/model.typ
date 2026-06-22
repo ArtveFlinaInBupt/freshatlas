@@ -1,22 +1,23 @@
-#let font = (
-  serif: ((name: "STIX Two Text", covers: "latin-in-cjk"), "Source Han Serif SC"),
-  mono: ("Fira Code",),
-  math: ("STIX Two Math", "STIX Two Text", "Source Han Serif SC"),
-)
+#let font = {
+  let en = ((name: "STIX Two Text", covers: "latin-in-cjk"),)
+  (
+    en: en,
+    serif: en + ("Source Han Serif SC",),
+    sans: ("Source Han Sans SC",),
+    mono: ((name: "Fira Code", covers: "latin-in-cjk"),),
+    math: ("STIX Two Math",),
+    axis-height: .258em,
+  )
+}
 
 #let colors = (link: blue)
 
 #let stroke = (paint: luma(50%), thickness: .75pt)
 
 #let backlink(url, body) = {
-  // show: underline.with(offset: .25em, stroke: (
-  //   thickness: .5pt,
-  // ))
-
-  // workaround
   show: box.with(
     outset: (bottom: .25em),
-    stroke: (bottom: (paint: colors.link, thickness: .5pt)), // avoid context
+    stroke: (bottom: (paint: colors.link, thickness: .5pt)),
   )
 
   link(url, {
