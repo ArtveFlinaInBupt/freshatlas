@@ -56,7 +56,7 @@
       gray,
       grid(
         columns: (auto, 1fr, auto),
-        align: (left, center, right),
+        align: (x, y) => (left, center, right).at(x) + horizon,
         [最后更新：#datetime.today().display("[year] 年 [month] 月 [day] 日")],
         [],
         [
