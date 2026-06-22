@@ -2,20 +2,14 @@
 #import "/template/style.typ": show-body
 #import "/template/model.typ": backlink
 
-#import "model/campus-cell.typ": *
+#import "model/color.typ": (
+  bad-color, female-color, good-color, male-color, mixed-color, neutral-color, unknown-color,
+  wip-color,
+)
+#import "model/campus-cell.typ": 本部-cell, 沙河-cell
 #import "model/freshman-hint.typ": *
 
 #show: show-body
-
-#let male-color = eastern.darken(5%)
-#let female-color = fuchsia.darken(5%)
-#let mixed-color = color.mix(male-color, female-color)
-
-#let good-color = green.darken(25%)
-#let bad-color = red.darken(25%)
-#let neutral-color = blue
-#let unknown-color = yellow.darken(25%)
-#let wip-color = gray
 
 #let male = text.with(fill: male-color)
 #let female = text.with(fill: female-color)
@@ -122,7 +116,7 @@
 
   本部-cell(rowspan: 9, body: [西土城\ 校区\ （校本部）]),
 
-  male[学 13\ （双人间）],
+  male[学 13\ （2 人间）],
   [  博],
   good[2],
   good[上床下桌],
@@ -161,7 +155,7 @@
 
     有超过 4 个独立的真实住户信源认为学 8 环境毋庸置疑好于新建的学 2，笔者并不理解为何，但还是尊重其意愿更新到前面
   ]),
-  female[学 4\ （四人间）],
+  female[学 4\ （4 人间）],
   [  博],
   neutral[中],
   neutral[北门柜\ 西门柜],
@@ -189,7 +183,7 @@
     使用沙河雁南换下的家具
   ],
 
-  male[学 13\ （四人间）],
+  male[学 13\ （4 人间）],
   [ 硕 ],
   [少量房间#good[有]\ 其余为#neutral[假阳台]],
   [#bad[移动网络信号奇差]\ （校园网正常）],
@@ -310,7 +304,7 @@
 
   本部-cell(rowspan: 3, body: [西土城\ 校区\ （校本部）]),
 
-  female[学 4\ （六人间）],
+  female[学 4\ （6 人间）],
   [本硕博],
   neutral[6],
   bad[上下铺],
@@ -395,7 +389,7 @@
   bad[坏],
 )
 
-= 柏油 · 宿舍
+= 柏油 · #text(fill: mixed-color)[宿舍]
 
 #freshman-hint
 
@@ -443,7 +437,7 @@
   )
 }
 
-特殊房间不完全列表（仅说明和其他房间不同之处）：
+特殊房间列表，仅说明和其他房间不同之处：
 
 #grid(
   columns: 2,

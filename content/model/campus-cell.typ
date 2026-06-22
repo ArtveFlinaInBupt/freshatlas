@@ -1,16 +1,14 @@
-#import "/template/util.typ": *
 #import "@preview/fancy-tiling:1.0.0": diagonal-stripes
+
+#import "/template/util.typ": *
+
+#import "color.typ": invalid-color, 本部-color, 沙河-color, 海南-color
 
 #let specified-cell(color, body, ..args) = tcell(
   fill: color.background,
   ..args.named(),
   text(fill: color.foreground)[#body],
 )
-
-#let 沙河-color = (background: teal.lighten(85%), foreground: teal.darken(25%))
-#let 海南-color = (background: green.lighten(85%), foreground: green.darken(25%))
-#let 本部-color = (background: red.lighten(85%), foreground: red.darken(25%))
-#let invalid-color = (background: white, foreground: white)
 
 #let 沙河-styled = text.with(fill: 沙河-color.foreground)
 #let 海南-styled = text.with(fill: 海南-color.foreground)

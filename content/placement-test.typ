@@ -1,11 +1,9 @@
 #import "/template/util.typ": *
 #import "/template/style.typ": show-body
 
-#show: show-body
+#import "model/color.typ": level-color, placement-color, unknown-color
 
-#let unknown-color = yellow.darken(25%)
-#let placement-color = olive.darken(25%)
-#let level-color = orange.darken(25%)
+#show: show-body
 
 #let unknown = text.with(fill: unknown-color)
 #let placement = text.with(fill: placement-color)
@@ -16,9 +14,7 @@
   let body = [两者]
   let (width, height) = measure(body)
   text(
-    fill: gradient
-      .linear(placement-color, level-color, angle: -calc.atan(width / height))
-      .sharp(2),
+    fill: gradient.linear(placement-color, level-color, angle: -calc.atan(width / height)).sharp(2),
     body,
   )
 })
