@@ -26,13 +26,10 @@ target_pdf := $(out_dir)/$(name)$(date).pdf
 target_png_1 := $(out_dir)/$(name1)$(date).png
 target_png_2 := $(out_dir)/$(name2)$(date).png
 target_png_3 := $(out_dir)/$(name3)$(date).png
-target_svg_1 := $(out_dir)/$(name1)$(date).svg
-target_svg_2 := $(out_dir)/$(name2)$(date).svg
-target_svg_3 := $(out_dir)/$(name3)$(date).svg
 
 COMPILE := typst compile --root . --input release=
 
-all: pdf png svg
+all: pdf png
 
 $(out_dir):
 	mkdir -p $(out_dir)
@@ -45,12 +42,7 @@ png: $(out_dir)
 	$(COMPILE) $(src2) $(target_png_2) --ppi 300
 	$(COMPILE) $(src3) $(target_png_3) --ppi 300
 
-svg: $(out_dir)
-	$(COMPILE) $(src1) $(target_svg_1)
-	$(COMPILE) $(src2) $(target_svg_2)
-	$(COMPILE) $(src3) $(target_svg_3)
-
 clean:
 	rm -rf $(out_dir)
 
-.PHONY: all pdf png svg clean
+.PHONY: all pdf png clean
