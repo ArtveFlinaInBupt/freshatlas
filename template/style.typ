@@ -13,13 +13,50 @@
   body
 }
 
+// Copied from 大邮数学集, with modifications.
+#let styled-outline(body) = {
+  import outline.entry
+
+  set outline(indent: 1.5em)
+  set entry(fill: none)
+  show entry.where(level: 1): set entry(fill: line(length: 100%, stroke: (
+    thickness: .5pt,
+    paint: luma(216),
+  )))
+  show entry: it => {
+    let get-indent(level) = h(if type(outline.indent) == relative {
+      level * outline.indent
+    } else {
+      panic("Unsupported outline indent type (such as `auto`).")
+    })
+    let body-transform(level, body) = text(fill: black, body)
+    let page-transform(level, body) = text(fill: black, body)
+
+    let indent = get-indent(it.level - 1)
+    let body = {
+      body-transform(it.level - 1, it.body())
+      box(width: 1fr, pad(x: .25em, it.fill))
+    }
+    let page = page-transform(it.level - 1, it.page())
+
+    link(it.element.location(), grid(
+      columns: (auto, 1fr, auto),
+      align: (auto, auto, bottom),
+      indent, body, text(number-width: "tabular", page),
+    ))
+  }
+
+  body
+}
+
+
 #let show-body(..args, body) = {
   let config = args.named()
   let spinoff = config.at("spinoff", default: false)
 
   set document(author: ("fa_555 <fa_555@foxmail.com>",), date: datetime.today())
 
-  set text(font: font.serif, fallback: false)
+  set text(lang: "zh", region: "cn", font: font.serif, fallback: false)
   set par(leading: .5em, spacing: .75em, justify: true)
 
   show heading: align.with(center)
