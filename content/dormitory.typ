@@ -58,7 +58,7 @@
     tcell(rowspan: 3)[*最后装修\ 年份*],
     tcell(rowspan: 3)[*住宿费#linebreak()#text(size: .7em)[元 / 学年]*],
     tcell(rowspan: 3)[*其他说明*\ #unknown[（欢迎补充）]],
-    tcell(rowspan: 2)[住户类型],
+    tcell(rowspan: 2)[近 5 年\ 住户类型],
     tcell(rowspan: 2)[每室人数],
     tcell(rowspan: 2)[家具],
     tcell(rowspan: 2)[卫生间],
@@ -73,9 +73,13 @@
     [科研楼],
   ),
 
-  沙河-cell(rowspan: 5, body: [沙河校区]),
+  沙河-cell(rowspan: 6, body: [沙河校区]),
+
+  wip[研究生楼],
+  tcell(colspan: 15, quest),
+
   female[雁南 S6],
-  tcell(rowspan: 5, [本科生\ 硕士研究生\ 博士研究生]),
+  tcell(rowspan: 5, [本硕博]),
   tcell(rowspan: 5, good[4]),
   tcell(rowspan: 5, good[上床下桌]),
   tcell(rowspan: 5, good[独卫\ +\ 公卫#fn(2)#fn(3)]),
@@ -118,8 +122,8 @@
 
   本部-cell(rowspan: 9, body: [西土城\ 校区\ （校本部）]),
 
-  male[学 13\ （博士）],
-  [博士研究生],
+  male[学 13\ （双人间）],
+  [  博],
   good[2],
   good[上床下桌],
   neutral[公卫],
@@ -138,7 +142,7 @@
   ],
 
   mixed[学 8],
-  [本科生\ 博士研究生],
+  [#female[本] 博],
   tcell(rowspan: 2, good[4]),
   tcell(rowspan: 2, good[上床下桌]),
   tcell(rowspan: 2, neutral[独卫]),
@@ -157,8 +161,8 @@
 
     有超过 4 个独立的真实住户信源认为学 8 环境毋庸置疑好于新建的学 2，笔者并不理解为何，但还是尊重其意愿更新到前面
   ]),
-  female[学 4\ （部分）],
-  [博士研究生],
+  female[学 4\ （四人间）],
+  [  博],
   neutral[中],
   neutral[北门柜\ 西门柜],
   [#neutral[中]\ #neutral[部分寝室有独浴]\ #bad[但无热水]],
@@ -185,8 +189,8 @@
     使用沙河雁南换下的家具
   ],
 
-  male[学 13\ （硕士）],
-  [硕士研究生],
+  male[学 13\ （四人间）],
+  [ 硕 ],
   [少量房间#good[有]\ 其余为#neutral[假阳台]],
   [#bad[移动网络信号奇差]\ （校园网正常）],
   bad[远],
@@ -197,7 +201,7 @@
   [750],
 
   female[学 29],
-  [硕士研究生\ 博士研究生],
+  [本硕博],
   [8 人套间\ 每室 #good[2 \~ 4] 人],
   good[普通单层\ 床铺桌椅],
   neutral[套间\ 卫生间\ （马桶）],
@@ -220,7 +224,7 @@
   ],
 
   [#female[学 9]\ #female[学 11]],
-  [本科生],
+  [本  ],
   good[4],
   good[上床下桌],
   neutral[公卫],
@@ -239,7 +243,7 @@
   ],
 
   [#mixed[学 3]\ #male[学 5]],
-  [本科生\ 硕士研究生],
+  [#male[本]硕 ],
   neutral[6],
   good[上床下桌],
   bad[公卫],
@@ -260,7 +264,7 @@
   ],
 
   male[学 10],
-  [本科生\ 硕士研究生\ 博士研究生],
+  [本硕博],
   neutral[6],
   good[上床下桌],
   neutral[公卫],
@@ -281,7 +285,7 @@
 
   沙河-cell(body: [沙河校区]),
   [#male[雁南 S2\ 雁南 S3]\ #mixed[雁南 S4]\ #female[雁南 S5]\ #mixed[（25 级）]],
-  [本科生\ 硕士研究生\ 博士研究生],
+  [本硕博],
   neutral[6],
   neutral[
     床床#hide[#backlink("about:blank")[]] \
@@ -306,8 +310,8 @@
 
   本部-cell(rowspan: 3, body: [西土城\ 校区\ （校本部）]),
 
-  female[学 4\ （部分）],
-  [本科生\ 硕士研究生\ 博士研究生],
+  female[学 4\ （六人间）],
+  [本硕博],
   neutral[6],
   bad[上下铺],
   neutral[独卫],
@@ -328,7 +332,7 @@
   ],
 
   male[学 6],
-  [本科生],
+  [本  ],
   [#wip[4 或] #neutral[6]],
   bad[上下铺],
   bad[独卫],
@@ -349,7 +353,7 @@
   ],
 
   [#male[学 1]],
-  [本科生],
+  [本  ],
   bad[8],
   bad[上下铺],
   bad[公卫],
