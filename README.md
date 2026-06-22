@@ -8,13 +8,13 @@
 
 ## 获取
 
-在 [Releases](https://github.com/ArtveFlinaInBupt/dormitory/releases) 中下载。
+在 [Releases](https://github.com/ArtveFlinaInBupt/freshatlas/releases) 中下载。
 
 ## 构建
 
 ### 依赖
 
-- [Typst](https://github.com/typst/typst) 0.14.2
+- [Typst](https://github.com/typst/typst) 0.15.0
 - GNU Make
 - 字体
   - 简体中文字体：[思源宋体 (Source Han Serif SC)](https://github.com/adobe-fonts/source-han-serif)
@@ -25,8 +25,8 @@
 ### 编译
 
 ```bash
-git clone git@github.com:ArtveFlinaInBupt/dormitory.git
-cd dormitory
+git clone git@github.com:ArtveFlinaInBupt/freshatlas.git
+cd freshatlas
 make lang=zh
 # 所有产物会在 `out/` 目录下
 ```
@@ -44,4 +44,4 @@ make lang=zh
 
 若需修改或二次创作，请自行阅读源码。
 
-本项目采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 协议。
+本项目及产物采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 协议。
