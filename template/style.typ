@@ -102,7 +102,7 @@
         [],
         [
           提供信息或贡献内容请到
-          #if not spinoff [#link("https://github.com/ArtveFlinaInBupt/dormitory")[#github-logo `ArtveFlinaInBupt/dormitory`] 或]
+          #if not spinoff [#link("https://github.com/ArtveFlinaInBupt/freshatlas")[#github-logo `ArtveFlinaInBupt/freshatlas`] 或]
           #link("mailto:fa_555@foxmail.com", `fa_555`)
         ],
       ),
