@@ -38,16 +38,22 @@
 #let fn = footnote-numbered
 
 // Copied from 大邮数学集, with modifications.
-#let fancy(colors, body) = {
-  let get-gradient(mapper) = gradient.linear(angle: 5deg, ..colors.map(mapper))
+#let fancy(colors, body, sharped: false) = {
+  let get-gradient(mapper, sharped: none) = {
+    let gradient = gradient.linear(angle: 5deg, ..colors.map(mapper))
+    if sharped {
+      gradient = gradient.sharp(colors.len())
+    }
+    gradient
+  }
 
   let margin = .75em
   block(
     outset: (x: margin),
     inset: (y: margin),
     radius: (bottom-left: 0pt, top-right: 0pt, rest: .5em),
-    fill: get-gradient(it => it.lighten(90%)),
-    text(fill: get-gradient(it => it.darken(35%)), body),
+    fill: get-gradient(it => it.lighten(90%), sharped: sharped),
+    text(fill: get-gradient(it => it.darken(35%), sharped: false), body),
   )
 }
 
