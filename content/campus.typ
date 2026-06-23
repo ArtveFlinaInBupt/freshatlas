@@ -293,8 +293,6 @@
 
 = 柏油 · #text(fill: 本部-color.foreground)[校区]
 
-#disclaimer
-
 另附：来自学校官网的#backlink("https://www.bupt.edu.cn/bygk/zjby/xydt.htm")[校园地图]
 
 #grid(

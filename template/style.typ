@@ -1,4 +1,4 @@
-#import "util.typ": github-logo
+#import "util.typ": disclaimer, github-logo
 #import "model.typ": *
 
 #let show-watermark(enable: true, body) = {
@@ -56,11 +56,15 @@
 
   set document(author: ("fa_555 <fa_555@foxmail.com>",), date: datetime.today())
 
-  set text(lang: "zh", region: "cn", font: font.serif, fallback: false)
+  set text(size: 10pt, lang: "zh", region: "cn", font: font.serif, fallback: false)
   set par(leading: .5em, spacing: .75em, justify: true)
 
+  show heading: set block(below: .75em)
   show heading: align.with(center)
-  show heading.where(level: 1): it => it + v(.5em)
+  show heading.where(level: 1): it => {
+    it
+    text(size: 10pt, weight: "regular", disclaimer)
+  }
 
   set grid.hline(stroke: stroke)
   set grid.vline(stroke: stroke)

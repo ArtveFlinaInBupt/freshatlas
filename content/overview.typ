@@ -1,5 +1,5 @@
 #import "/template/style.typ": show-body
-#import "/template/util.typ": qty, ruby, meander, disclaimer
+#import "/template/util.typ": qty, ruby, meander
 
 #import "model/color.typ": BUPT-VI-color
 #import "model/freshman-hint.typ": freshman-hint
@@ -9,8 +9,6 @@
 #set page(width: 120em)
 
 = 柏油 · #text(fill: BUPT-VI-color.tint.tint(100%))[总览]
-
-#disclaimer
 
 #freshman-hint
 

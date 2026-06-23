@@ -23,8 +23,6 @@
 
 = 柏油 · #placement[入学考试]
 
-#disclaimer
-
 #placement[入学考试]在大一入学前后举行，近年通常开学前线上进行。
 
 #placement[考试]项目仅包含#box(stroke: (bottom: .5pt), outset: (bottom: .2em))[英语]，题型与英语四级（CET-4）的客观题部分相似。
