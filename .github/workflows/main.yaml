@@ -42,8 +42,8 @@ jobs:
         run: |
           curl -L https://github.com/adobe-fonts/source-han-serif/releases/download/2.003R/09_SourceHanSerifSC.zip -o SourceHanSerifSC.zip
           curl -L https://github.com/adobe-fonts/source-han-sans/releases/download/2.005R/09_SourceHanSansSC.zip -o SourceHanSansSC.zip
-          unzip SourceHanSerifSC.zip -d ~/.local/share/fonts
-          unzip SourceHanSansSC.zip -d ~/.local/share/fonts
+          unzip -q SourceHanSerifSC.zip -d ~/.local/share/fonts/source-han-serif
+          unzip -q SourceHanSansSC.zip -d ~/.local/share/fonts/source-han-sans
           fc-cache -fv
 
       - name: Check timezone
