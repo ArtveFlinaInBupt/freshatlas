@@ -1,27 +1,18 @@
 #import "/template/util.typ": *
 
-#let freshman-hint = [
-  #set text(fill: red.darken(25%))
+#import "color.typ": BUPT-VI-color
 
+#let freshman-hint = [
   #show: align.with(center)
-  #show: block.with(
-    stroke: (
-      paint: red.darken(25%),
-      thickness: 1pt,
-      dash: "dotted",
-    ),
-    radius: 1em,
-    inset: (right: 1em, y: .75em),
-    fill: red.lighten(95%),
-  )
+  #show: fancy.with((green, olive, teal, blue))
   #show: align.with(left)
 
   #align(center, text(
     size: 1.25em,
-    [#datetime.today().display("[year]") 开学季 Special：*本科新生可能需要的信息*],
+    [#datetime.today().display("[year]") 开学季 Special：*本科新生相关的信息*],
   ))
 
-  - 关于家具、户型参数
+  - 关于户型、家具参数
 
     - *据猜测*，26 级本科新生将要继承回迁本部的 24 级的宿舍，入住沙河雁北上床下桌 4 人间。如有更新的情况，本材料会及时跟进。
       - 你们的 25 级学长学姐们对宿舍怨言很大，因为他们被学校阴了一手，已经在雁南 6 人间住了一年；但是就目前的蛛丝马迹看来 26 级不会步其后尘。

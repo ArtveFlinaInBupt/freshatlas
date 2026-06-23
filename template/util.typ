@@ -1,5 +1,9 @@
-#import table.cell as tcell
+#import "@preview/rubby:0.10.2": get-ruby
+#import "@preview/meander:0.4.3"
+
 #import "model.typ": stroke
+
+#import table.cell as tcell
 
 #let disclaimer = [不对任何信息提供正确性保证。编者并非全能神，信息从普遍共识、校内公开数据与师生口中整合得到，可能有错误。]
 
@@ -32,3 +36,19 @@
 
 #let footnote-numbered(n) = super(numbering("*", n))
 #let fn = footnote-numbered
+
+// Copied from 大邮数学集, with modifications.
+#let fancy(colors, body) = {
+  let get-gradient(mapper) = gradient.linear(angle: 5deg, ..colors.map(mapper))
+
+  let margin = .75em
+  block(
+    outset: (x: margin),
+    inset: (y: margin),
+    radius: (bottom-left: 0pt, top-right: 0pt, rest: .5em),
+    fill: get-gradient(it => it.lighten(90%)),
+    text(fill: get-gradient(it => it.darken(35%)), body),
+  )
+}
+
+#let ruby(..args) = box(align(center, get-ruby(..args.named())(..args.pos())))
