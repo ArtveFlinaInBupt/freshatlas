@@ -25,7 +25,7 @@ jobs:
       - name: Install Typst
         uses: typst-community/setup-typst@v4
         with:
-          typst-version: 0.14.2
+          typst-version: 0.15.0
 
       - name: Install Fontist
         uses: fontist/setup-fontist@v2
@@ -38,10 +38,12 @@ jobs:
           fontist install "STIX Two Text"
           fontist install "Fira Code"
 
-      - name: Install Source Han Serif SC
+      - name: Install Source Han S{erif, ans} SC
         run: |
           curl -L https://github.com/adobe-fonts/source-han-serif/releases/download/2.003R/09_SourceHanSerifSC.zip -o SourceHanSerifSC.zip
+          curl -L https://github.com/adobe-fonts/source-han-sans/releases/download/2.005R/09_SourceHanSansSC.zip -o SourceHanSansSC.zip
           unzip SourceHanSerifSC.zip -d ~/.local/share/fonts
+          unzip SourceHanSansSC.zip -d ~/.local/share/fonts
           fc-cache -fv
 
       - name: Check timezone
