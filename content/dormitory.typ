@@ -24,6 +24,8 @@
 
 #let quest = unknown[?]
 
+#let dorm = tcell.with(x: 1)
+
 #let 性别图例 = table(
   inset: (x: 1em),
   table.header[*性别图例*],
@@ -67,12 +69,12 @@
     [科研楼],
   ),
 
-  沙河-cell(rowspan: 6, body: [沙河校区]),
+  沙河-cell(x: 0, rowspan: 6, body: [沙河校区]),
 
-  wip[研究生楼],
+  dorm(wip[研究生楼]),
   tcell(colspan: 15, quest),
 
-  female[雁南 S6],
+  dorm(female[雁南 S6]),
   tcell(rowspan: 5, [本硕博]),
   tcell(rowspan: 5, good[4]),
   tcell(rowspan: 5, good[上床下桌]),
@@ -93,12 +95,12 @@
     面积大于其他宿舍，家具更好，上下床走台阶而非爬梯子
   ],
 
-  female[雁南 S5\ 雁南 S4\ （24 级前）],
+  dorm(female[雁南 S5\ 雁南 S4\ （24 级前）]),
   [2016],
   [900],
   [仍有一部分 2024 级以上的女生居住，对应的房间维持使用原有上床下桌家具],
 
-  [#male[雁北 E]\ #male[雁北 D2]],
+  dorm[#male[雁北 E]\ #male[雁北 D2]],
   tcell(rowspan: 3)[2014],
   tcell(rowspan: 3)[1200],
   tcell(rowspan: 3)[
@@ -111,7 +113,7 @@
 
   本部-cell(rowspan: 9, body: [西土城\ 校区\ （校本部）]),
 
-  male[学 13\ （2 人间）],
+  dorm(male[学 13\ （2 人间）]),
   [  博],
   good[2],
   good[上床下桌],
@@ -130,7 +132,7 @@
     使用沙河雁南换下的家具
   ],
 
-  mixed[学 8],
+  dorm(mixed[学 8]),
   [#female[本] 博],
   tcell(rowspan: 2, good[4]),
   tcell(rowspan: 2, good[上床下桌]),
@@ -150,7 +152,7 @@
 
     有超过 4 个独立的真实住户信源认为学 8 环境毋庸置疑好于新建的学 2，笔者并不理解为何，但还是尊重其意愿更新到前面
   ]),
-  female[学 4\ （4 人间）],
+  dorm(female[学 4\ （4 人间）]),
   [  博],
   neutral[中],
   neutral[北门柜\ 西门柜],
@@ -159,7 +161,7 @@
   bad[远],
   [850],
 
-  wip[学 2],
+  dorm(wip[学 2]),
   quest,
   tcell(rowspan: 2, good[4]),
   tcell(rowspan: 2, good[上床下桌]),
@@ -178,7 +180,7 @@
     使用沙河雁南换下的家具
   ],
 
-  male[学 13\ （4 人间）],
+  dorm(male[学 13\ （4 人间）]),
   [ 硕 ],
   [少量房间#good[有]\ 其余为#neutral[假阳台]],
   [#bad[移动网络信号奇差]\ （校园网正常）],
@@ -189,7 +191,7 @@
   bad[远],
   [750],
 
-  female[学 29],
+  dorm(female[学 29]),
   [本硕博],
   [8 人套间\ 每室 #good[2 \~ 4] 人],
   good[普通单层\ 床铺桌椅],
@@ -212,7 +214,7 @@
     只有一楼有热饮用水
   ],
 
-  [#female[学 9]\ #female[学 11]],
+  dorm[#female[学 9]\ #female[学 11]],
   [本  ],
   good[4],
   good[上床下桌],
@@ -231,7 +233,7 @@
     单寝面积很小
   ],
 
-  [#mixed[学 3]\ #male[学 5]],
+  dorm[#mixed[学 3]\ #male[学 5]],
   [#male[本]硕 ],
   neutral[6],
   good[上床下桌],
@@ -252,7 +254,7 @@
     除一楼和顶楼外层高很低，床上难以坐直
   ],
 
-  male[学 10],
+  dorm(male[学 10]),
   [本硕博],
   neutral[6],
   good[上床下桌],
@@ -271,9 +273,8 @@
     楼道内通风、采光差
   ],
 
-
-  沙河-cell(body: [沙河校区]),
-  [#male[雁南 S2\ 雁南 S3]\ #mixed[雁南 S4]\ #female[雁南 S5]\ #mixed[（25 级）]],
+  沙河-cell(x: 0, body: [沙河校区]),
+  dorm[#male[雁南 S2\ 雁南 S3]\ #mixed[雁南 S4]\ #female[雁南 S5]\ #mixed[（25 级）]],
   [本硕博],
   neutral[6],
   neutral[
@@ -297,9 +298,9 @@
     衷心希望新的宿舍楼能够早日建成以分担住宿压力，拯救水深火热中的雁南住户
   ],
 
-  本部-cell(rowspan: 3, body: [西土城\ 校区\ （校本部）]),
+  本部-cell(x: 0, rowspan: 3, body: [西土城\ 校区\ （校本部）]),
 
-  female[学 4\ （6 人间）],
+  dorm(female[学 4\ （6 人间）]),
   [本硕博],
   neutral[6],
   bad[上下铺],
@@ -320,7 +321,7 @@
     有和前面学 8 相同的所有问题
   ],
 
-  male[学 6],
+  dorm(male[学 6]),
   [本  ],
   [#wip[4 或] #neutral[6]],
   bad[上下铺],
@@ -341,7 +342,7 @@
     居住 4 人的房间还未实现，猜测直接由老 6 人间继承，也应有 3 对上下铺
   ],
 
-  [#male[学 1]],
+  dorm[#male[学 1]],
   [本  ],
   bad[8],
   bad[上下铺],
