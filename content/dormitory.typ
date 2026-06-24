@@ -8,7 +8,9 @@
 )
 #import "model/campus-cell.typ": 本部-cell, 沙河-cell
 
-#show: show-body
+#let tint = mixed-color
+
+#show: show-body.with(tint: tint)
 
 #let male = text.with(fill: male-color)
 #let female = text.with(fill: female-color)
@@ -383,7 +385,7 @@
   bad[坏],
 )
 
-= 柏油 · #text(fill: mixed-color)[宿舍]
+= 柏油 · #text(fill: tint)[宿舍]
 
 表格内只讨论绝大多数宿舍配置，不讨论占比较少的特殊房间。
 

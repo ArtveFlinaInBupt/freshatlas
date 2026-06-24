@@ -6,7 +6,9 @@
 #import "model/subway.typ": get-subway
 #import "model/campus-cell.typ": *
 
-#show: show-body
+#let tint = 本部-color.foreground
+
+#show: show-body.with(tint: tint)
 
 #let secondary = text.with(fill: secondary-color)
 #let active(body) = text(fill: red)[\[#body\]]
@@ -291,7 +293,7 @@
   ),
 )
 
-= 柏油 · #text(fill: 本部-color.foreground)[校区]
+= 柏油 · #text(fill: tint)[校区]
 
 另附：来自学校官网的#backlink("https://www.bupt.edu.cn/bygk/zjby/xydt.htm")[校园地图]
 

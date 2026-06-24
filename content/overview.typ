@@ -4,11 +4,13 @@
 #import "model/color.typ": BUPT-VI-color
 #import "model/freshman-hint.typ": freshman-hint
 
-#show: show-body
+#let tint = BUPT-VI-color.tint.tint(100%)
+
+#show: show-body.with(tint: tint)
 
 #set page(width: 120em)
 
-= 柏油 · #text(fill: BUPT-VI-color.tint.tint(100%))[总览]
+= 柏油 · #text(fill: tint)[总览]
 
 #freshman-hint
 

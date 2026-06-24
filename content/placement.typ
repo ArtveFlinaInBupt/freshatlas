@@ -3,7 +3,9 @@
 
 #import "model/color.typ": level-color, placement-color, unknown-color
 
-#show: show-body
+#let tint = placement-color
+
+#show: show-body.with(tint: tint)
 
 #let unknown = text.with(fill: unknown-color)
 #let placement = text.with(fill: placement-color)
@@ -21,7 +23,7 @@
 
 #set page(width: 60em)
 
-= 柏油 · #placement[入学考试]
+= 柏油 · #text(fill: tint)[入学考试]
 
 #placement[入学考试]在大一入学前后举行，近年通常开学前线上进行。
 

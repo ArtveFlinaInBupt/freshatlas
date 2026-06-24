@@ -52,18 +52,32 @@
 
 #let show-body(..args, body) = {
   let config = args.named()
+  let text-size = config.at("size", default: 10pt)
   let spinoff = config.at("spinoff", default: false)
+  let tint = config.at("tint", default: black)
 
   set document(author: ("fa_555 <fa_555@foxmail.com>",), date: datetime.today())
 
-  set text(size: 10pt, lang: "zh", region: "cn", font: font.serif, fallback: false)
+  set text(size: text-size, lang: "zh", region: "cn", font: font.serif, fallback: false)
   set par(leading: .5em, spacing: .75em, justify: true)
 
   show heading: set block(below: .75em)
   show heading: align.with(center)
   show heading.where(level: 1): it => {
+    {
+      set text(size: text-size, weight: "regular")
+      show: place
+      show: align.with(horizon)
+      let phi = (1 + calc.sqrt(5)) / 2
+      stack(
+        dir: ltr,
+        spacing: .5em / phi,
+        box(fill: tint, height: 1em, width: 1em / phi),
+        counter(page).display(),
+      )
+    }
     it
-    text(size: 10pt, weight: "regular", disclaimer)
+    text(size: text-size, weight: "regular", disclaimer)
   }
 
   set grid.hline(stroke: stroke)

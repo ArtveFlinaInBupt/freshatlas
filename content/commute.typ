@@ -3,9 +3,11 @@
 
 #import "model/subway.typ": get-subway, get-subway-color
 
-#show: show-body
+#let tint = get-subway-color(27)
 
-= 柏油 · #text(fill: get-subway-color(27))[通勤]
+#show: show-body.with(tint: tint)
+
+= 柏油 · #text(fill: tint)[通勤]
 
 #show: align.with(center)
 
