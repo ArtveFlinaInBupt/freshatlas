@@ -203,13 +203,13 @@
 #let 校区说明表格 = table(
   columns: (auto, auto, auto, 30em),
   align: (x, y) => if x == 3 and y != 0 { left } else { center } + horizon,
-  inset: (x: .5em, y: .75em),
+
   table.header[*校区名称*][*图例*][*地址*][*介绍*],
 
   [西土城校区\ （校本部）],
   本部-cell(),
   [北京市海淀区\ 西土城路 10 号],
-  subtable(inset: (x: .5em, y: .75em))[
+  subtable[
     自 1955 年建校以来的主校区，位于北京城区，交通十分便利。
 
     近几年正在大力活跃翻修，几个最差的寝室楼一跃而上成为了如今最好的。
@@ -231,7 +231,7 @@
   [沙河校区],
   沙河-cell(),
   [北京市昌平区\ 沙河高教园区],
-  subtable(inset: (x: .5em, y: .75em))[
+  subtable[
     2018 年起全面投入使用的新校区，位于北京郊区，生活环境较优渥。
 
     本校区与周边其他大学的校园都在活跃建设中。
@@ -271,12 +271,12 @@
 #let 详表 = align(
   left,
   stack(
-    spacing: .5em,
+    spacing: spacing.par-spacing,
     dir: ttb,
     // @typstyle off
     table(
       columns: 8,
-      inset: .5em,
+      inset: (x: .5em, y: spacing.par-spacing * .75),
       table.header(
         tcell(rowspan: 3)[*学院*],
         tcell(colspan: 5)[*校区*（宿舍）],
@@ -299,7 +299,7 @@
 
 #grid(
   columns: (auto, auto),
-  column-gutter: 4em,
+  column-gutter: 3em,
   [
     == 校区简介
 

@@ -58,10 +58,24 @@
 
   set document(author: ("fa_555 <fa_555@foxmail.com>",), date: datetime.today())
 
-  set text(size: text-size, lang: "zh", region: "cn", font: font.serif, fallback: false)
-  set par(leading: .5em, spacing: .75em, justify: true)
+  set text(
+    size: text-size,
+    lang: "zh",
+    region: "cn",
+    font: font.serif,
+    fallback: false,
+    top-edge: "bounds",
+    bottom-edge: "bounds",
+  )
+  set par(
+    first-line-indent: spacing.indent,
+    leading: spacing.line-leading,
+    spacing: spacing.par-spacing,
+    justify: true,
+  )
+  show table: set par(first-line-indent: 0pt)
 
-  show heading: set block(below: .75em)
+  show heading: set block(below: spacing.par-spacing)
   show heading: align.with(center)
   show heading.where(level: 1): it => {
     {
@@ -85,7 +99,7 @@
 
   set table.hline(stroke: stroke)
   set table.vline(stroke: stroke)
-  set table(stroke: stroke, align: center + horizon)
+  set table(stroke: stroke, align: center + horizon, inset: (x: .5em, y: spacing.par-spacing))
 
   show math.equation: set text(font: font.math + font.serif, fallback: false)
   show math.equation.where(block: false): it => math.display(it)
@@ -98,7 +112,7 @@
       box(width: 1em, align(center, it))
       h(-.5em)
     }),
-    spacing: .75em,
+    spacing: spacing.par-spacing,
   )
 
   show link: set text(fill: colors.link)

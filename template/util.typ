@@ -1,7 +1,7 @@
 #import "@preview/rubby:0.10.2": get-ruby
 #import "@preview/meander:0.4.3"
 
-#import "model.typ": stroke
+#import "model.typ": *
 
 #import table.cell as tcell
 
@@ -57,4 +57,7 @@
   )
 }
 
-#let ruby(..args) = box(align(center, get-ruby(..args.named())(..args.pos())))
+#let ruby(..args) = box(align(
+  center,
+  get-ruby(dy: -spacing.line-leading / 2, ..args.named())(..args.pos()),
+))

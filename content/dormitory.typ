@@ -26,7 +26,7 @@
 
 #let 性别图例 = table(
   inset: (x: 1em),
-  table.header()[*性别图例*],
+  table.header[*性别图例*],
   male[男],
   female[女],
   [#mixed[混合]#fn(1)],
@@ -34,7 +34,7 @@
 )
 #let 好坏图例 = table(
   inset: (x: 1em),
-  table.header()[*好坏图例*],
+  table.header[*好坏图例*],
   good[好 / 近],
   bad[坏 / 远],
   neutral[中],
@@ -44,7 +44,6 @@
 // @typstyle off
 #let 主体表格 = table(
   columns: (..(auto,) * 16, 20em),
-  inset: .5em,
   align: (x, y) => if y != 0 and x == 16 { left } else { center },
   table.header(
     tcell(rowspan: 3)[*所在校区*],
@@ -406,7 +405,7 @@
       columns: 2,
       align: (bottom, left),
       column-gutter: 1em,
-      row-gutter: .5em,
+      row-gutter: spacing.par-spacing,
       好坏条, 主体表格,
       [], 表格注,
     ),
@@ -417,7 +416,8 @@
 
 #grid(
   columns: 2,
-  gutter: .5em,
+  column-gutter: .5em,
+  row-gutter: spacing.par-spacing / 2,
   [- *学 3 大 6 人间*：], [更大的空间，无阳台，有超大落地窗],
   [- *学 4 10 人间*：], [10 人（5 张上下铺），多个房间，无阳台],
   [- *学 5 10 人间*：], [10 人（5 张上下铺），更大的空间，无阳台],

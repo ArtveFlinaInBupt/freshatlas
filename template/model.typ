@@ -10,6 +10,12 @@
   )
 }
 
+#let spacing = (
+  line-leading: .25em,
+  par-spacing: .5em,
+  indent: (all: true, amount: 2em),
+)
+
 #let colors = (link: blue)
 
 #let stroke = (paint: luma(50%), thickness: .75pt)
