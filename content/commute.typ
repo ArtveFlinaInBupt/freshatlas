@@ -11,7 +11,7 @@
 
 #show: align.with(center)
 
-#fancy(sharped: true, ((2, 3, 4, 8, 9, 10, 12, 13, 18, 19, 27, 34, 35).map(get-subway-color)))[
+#fancy(((3, 12, 13, 9, 8, 4, 10, 2, 35, 18, 34, 19, 27).map(get-subway-color)))[
   今夏将更新各交通场站前往柏油沙河校区的通勤指南，敬请期待。
 
   彩蛋：本框中有北京地铁哪些线路的主题色？
