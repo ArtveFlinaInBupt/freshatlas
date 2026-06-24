@@ -3,6 +3,6 @@
 #show: styled-outline
 #show: show-body
 
-#set page(width: 60em)
+#set page(width: 62em)
 
 #outline(depth: 1)
