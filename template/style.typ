@@ -93,20 +93,25 @@
     height: auto,
     width: auto,
     margin: 4em,
-    footer: text(
-      gray,
-      grid(
-        columns: (auto, 1fr, auto),
-        align: (x, y) => (left, center, right).at(x) + horizon,
-        [最后更新：#datetime.today().display("[year] 年 [month] 月 [day] 日")],
-        [],
-        [
-          提供信息或贡献内容请到
-          #if not spinoff [#link("https://github.com/ArtveFlinaInBupt/freshatlas")[#github-logo `ArtveFlinaInBupt/freshatlas`] 或]
-          #link("mailto:fa_555@foxmail.com", `fa_555`)
-        ],
-      ),
-    ),
+    footer: text(fill: gray, grid(
+      columns: (auto, 1fr, auto),
+      align: (x, y) => (left, center, right).at(x) + horizon,
+      [最后更新：#datetime.today().display("[year] 年 [month] 月 [day] 日")],
+      none,
+      {
+        [提供信息或贡献内容请到 ]
+        (
+          if not spinoff {
+            link("https://github.com/ArtveFlinaInBupt/freshatlas")[
+              #github-logo `ArtveFlinaInBupt/freshatlas`
+            ]
+          },
+          link("mailto:fa_555@foxmail.com")[`fa_555`],
+        )
+          .filter(it => it != none)
+          .join(", ", last: "或")
+      },
+    )),
   )
 
   show: show-watermark.with(enable: not "release" in sys.inputs and not spinoff)
