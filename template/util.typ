@@ -53,5 +53,5 @@
 
 #let ruby(..args) = box(align(
   center,
-  get-ruby(dy: -spacing.line-leading / 2, ..args.named())(..args.pos()),
+  get-ruby(dy: -spacing.line-leading * .75, ..args.named())(..args.pos()),
 ))
