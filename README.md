@@ -46,4 +46,5 @@ make
 
 若需修改或二次创作，请自行阅读源码。
 
-本项目及产物采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 协议。
+- 源码采用 [GPL v3](https://www.gnu.org/licenses/gpl-3.0.html) 协议。
+- PDF、图片等产物采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 协议。
