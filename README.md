@@ -16,11 +16,13 @@
 
 - [Typst](https://github.com/typst/typst) 0.15.0
 - GNU Make
-- 字体
-  - 简体中文字体：[思源宋体 (Source Han Serif SC)](https://github.com/adobe-fonts/source-han-serif)
-  - 西文字体：[STIX Two Text](https://github.com/stipub/stixfonts)
-  - 数学字体：[STIX Two Math](https://github.com/stipub/stixfonts)
-  - 等宽字体：[Fira Code](https://github.com/tonsky/FiraCode)
+- 字体（也可在 GitHub Actions workflow file 中自行找到）
+  - 衬线体
+    - 简体中文：[思源宋体 (Source Han Serif SC)](https://github.com/adobe-fonts/source-han-serif)
+    - 西文：[STIX Two Text](https://github.com/stipub/stixfonts)
+  - 非衬线体：[思源黑体 (Source Han Sans SC)](https://github.com/adobe-fonts/source-han-sans)
+  - 数学：[STIX Two Math](https://github.com/stipub/stixfonts)
+  - 等宽：[Fira Code](https://github.com/tonsky/FiraCode)
 
 ### 编译
 

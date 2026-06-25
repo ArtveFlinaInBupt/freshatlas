@@ -78,6 +78,6 @@
     inset: (x: .15em),
     outset: (y: .25em),
     radius: .25em,
-    text(fill: item.foreground, item.name),
+    text(font: font.sans, fill: item.foreground, item.name),
   )
 }
