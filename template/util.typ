@@ -55,3 +55,17 @@
   center,
   get-ruby(dy: -spacing.line-leading * .75, ..args.named())(..args.pos()),
 ))
+
+
+#let backlink(url, body) = {
+  show: box.with(
+    outset: (bottom: .15em),
+    stroke: (bottom: (paint: colors.link, thickness: .5pt)),
+  )
+
+  link(url, {
+    body
+    sym.space.thin
+    text(font: font.mono, weight: "light")[↗️]
+  })
+}

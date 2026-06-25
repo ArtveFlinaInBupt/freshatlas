@@ -1,6 +1,5 @@
 #import "/template/util.typ": *
 #import "/template/style.typ": show-body
-#import "/template/model.typ": backlink
 
 #import "model/color.typ": (
   bad-color, female-color, good-color, male-color, mixed-color, neutral-color, unknown-color,

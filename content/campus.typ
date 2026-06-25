@@ -1,5 +1,4 @@
 #import "/template/util.typ": *
-#import "/template/model.typ": backlink
 #import "/template/style.typ": show-body
 
 #import "model/color.typ": secondary-color, 本部-color

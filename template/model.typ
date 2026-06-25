@@ -19,16 +19,3 @@
 #let colors = (link: blue)
 
 #let stroke = (paint: luma(50%), thickness: .75pt)
-
-#let backlink(url, body) = {
-  show: box.with(
-    outset: (bottom: .25em),
-    stroke: (bottom: (paint: colors.link, thickness: .5pt)),
-  )
-
-  link(url, {
-    body
-    sym.space.thin
-    text(font: font.mono, weight: "light")[↗️]
-  })
-}

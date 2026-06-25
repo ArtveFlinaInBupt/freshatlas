@@ -1,5 +1,5 @@
 #import "/template/style.typ": show-body
-#import "/template/util.typ": meander, proper, qty, ruby
+#import "/template/util.typ": backlink, meander, proper, qty, ruby
 
 #import "model/color.typ": BUPT-VI-color
 #import "model/freshman-hint.typ": freshman-hint
@@ -43,7 +43,7 @@
   - 各项目运动队，民乐团、合唱团、交响乐团等艺术团。
   - 院校两级歌手大赛、球赛、社团百花节、运动会、五月鲜花合唱、毕业季光影秀等年度固定活动。
   - ACM/XCPC 集训队、天枢/天璇 CTF 战队、RM/RC 机器人、高性能计算 HPC *等*竞赛队伍。
-  - 自有的校内论坛#link("https://bbs.byr.cn")[北邮人论坛]，全校学生可实名、匿名发帖。
+  - 自有的校内论坛#backlink("https://bbs.byr.cn")[北邮人论坛]，全校学生可实名、匿名发帖。
   - 学生自主编写的第二课堂服务，用于统一通知、报名、记录各类活动。
   - 学生活动中心、会堂、礼堂楼等用于各学生组织进行公开或日常活动的场所。
   - 两校区均有篮球场、足球场、羽毛球场、网球场、乒乓球馆、健身房。
