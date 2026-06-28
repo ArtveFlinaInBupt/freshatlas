@@ -376,7 +376,7 @@
 #let 好坏条 = stack(
   spacing: .5em,
   good[好],
-  context box(
+  context rect(
     width: .1em,
     height: measure(主体表格).height - (2em + 2 * /* stack.spacing */.5em + 3em + 6 * table.inset),
     fill: gradient.linear(green, red, angle: 90deg),
