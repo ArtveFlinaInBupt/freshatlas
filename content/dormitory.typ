@@ -378,7 +378,7 @@
   good[好],
   context box(
     width: .1em,
-    height: measure(主体表格).height - 7.5em, // 需在更新表格后手动调整
+    height: measure(主体表格).height - (2em + 2 * /* stack.spacing */.5em + 3em + 6 * table.inset),
     fill: gradient.linear(green, red, angle: 90deg),
   ),
   bad[坏],
