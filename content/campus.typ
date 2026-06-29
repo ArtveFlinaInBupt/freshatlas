@@ -151,6 +151,12 @@
     fill: (..(invalid-cell(),) * 5,),
     source: none,
   ),
+  (
+    name: "空天科学与技术学院",
+    code: "???",
+    fill: (..(invalid-cell(),) * 5,),
+    source: none,
+  ),
   // (
   //   name: "",
   //   code: 0,
