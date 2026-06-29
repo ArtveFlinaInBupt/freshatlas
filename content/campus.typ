@@ -220,7 +220,7 @@
 
     距#proper[字节跳动总部（抖音大楼）]约 #qty[1.5][km]，距#proper[中关村]核心区约 #qty[5][km]。
 
-    距地铁#proper[蓟门桥]站约 #qty[200][m]，距地铁#("北太平庄", "西土城", "大钟寺").map(it => proper(it) + "站").join("、")、#proper[四道口]站（在建）均短于 #qty[1.5][km]，涉及地铁 #get-subway(10), #get-subway(12), #get-subway(13), #get-subway(19), #get-subway(27)，线路非常优质。
+    距地铁#proper[蓟门桥]站约 #qty[200][m]，距地铁#("北太平庄", "西土城", "大钟寺").map(it => proper(it) + "站").join("、")、#proper[四道口]站（在建）均短于 #qty[1.5][km]，涉及地铁 #get-subway(10) #get-subway(12) #get-subway(13) #get-subway(19) #get-subway(27)，线路非常优质。
   ][
     校内的连锁品牌：
 

@@ -114,6 +114,7 @@
     }),
     spacing: spacing.par-spacing,
   )
+  set enum(indent: 1em, spacing: spacing.par-spacing)
 
   show link: set text(fill: colors.link)
 
