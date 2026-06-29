@@ -40,7 +40,7 @@ png: $(target_pngs)
 
 define png_rule
 $(out_dir)/$(call png_name,$(1))$(date).png: content/$(call stem,$(1)).typ | $(out_dir)
-	$$(COMPILE) content/$(call stem,$(1)).typ $$@ --ppi 300
+	$$(COMPILE) content/$(call stem,$(1)).typ $$@ --ppi 300 --input single=true
 endef
 
 $(foreach s,$(srcs),$(eval $(call png_rule,$(s))))

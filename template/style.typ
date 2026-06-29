@@ -87,7 +87,9 @@
         dir: ltr,
         spacing: .5em / phi,
         box(fill: tint, height: 1em, width: 1em / phi),
-        counter(page).display(),
+        if not sys.inputs.at("single", default: none) == "true" {
+          counter(page).display()
+        },
       )
     }
     it
