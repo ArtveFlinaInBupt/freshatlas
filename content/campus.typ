@@ -28,7 +28,7 @@
     source: [23 级大三前回迁],
   ),
   (
-    name: "计算机学院（国家示范性软件学院）",
+    name: [计算机学院\ （国家示范性软件学院）],
     code: 313,
     fill: (沙河-cell(),) * 3 + (undetermined-cell(body: [未知]),) + (本部-cell(),),
     dept: ("本部", "教三"),
@@ -39,7 +39,7 @@
     ],
   ),
   // 老自动化院 314 RIP
-  // 软件院 315? RIP
+  // 软件院 315 RIP
   (
     name: "数字媒体与设计艺术学院",
     code: 316,
@@ -178,7 +178,7 @@
   let (campus, building) = dept
   ("沙": 沙河-cell, "沙河": 沙河-cell, "本": 本部-cell, "本部": 本部-cell).at(campus)(
     body: building,
-    x: 6,
+    x: 7,
   )
 }
 
@@ -199,10 +199,11 @@
   }
 
   (
-    tcell(x: 0)[(#row.code) #row.name],
+    tcell(x: 0)[#row.code],
+    tcell(x: 1)[#row.name],
     ..fill,
     dept-building(row.at("dept", default: ())),
-    tcell(x: 7, row.source),
+    tcell(x: 8, row.source),
   )
 }
 
@@ -281,10 +282,10 @@
     dir: ttb,
     // @typstyle off
     table(
-      columns: 8,
+      columns: 9,
       inset: (x: .5em, y: spacing.par-spacing * .75),
       table.header(
-        tcell(rowspan: 3)[*学院*],
+        tcell(rowspan: 3, colspan: 2)[*学院*],
         tcell(colspan: 5)[*校区*（宿舍）],
         tcell(rowspan: 3)[*校区*\ （学院楼）],
         tcell(rowspan: 3)[*依据*],
@@ -294,7 +295,7 @@
       ),
       ..data.map(gen-row-data).flatten(),
     ),
-    [#fn(1)曾经所有#沙河-styled[沙河校区]的研究生须在毕业年级回迁#本部-styled[本部]，但自 2025 年起似乎不再有该要求。#active[有活跃异动，未稳定]],
+    [#fn(1)曾经所有#沙河-styled[沙河校区]的研究生须在毕业年级回迁#本部-styled[本部]，但自 2025 年起似乎不再有该要求。],
     [#fn(2)人文学院法学专业联培学生大三学年前往中国政法大学参与联合培养。],
   ),
 )
