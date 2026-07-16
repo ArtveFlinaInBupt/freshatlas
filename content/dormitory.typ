@@ -51,12 +51,12 @@
     tcell(rowspan: 3)[*宿舍楼*],
     tcell(colspan: 12)[*配置*],
     tcell(rowspan: 3)[*最后装修\ 年份*],
-    tcell(rowspan: 3)[*住宿费#linebreak()#text(size: .7em)[元 / 学年]*],
+    tcell(rowspan: 3)[*住宿费\ #text(size: .7em)[元 / 学年]*],
     tcell(rowspan: 3)[*其他说明*\ #unknown[（欢迎补充）]],
     tcell(rowspan: 2)[近 5 年\ 住户类型],
     tcell(rowspan: 2)[每室人数\ #text(size: .7em)[括号内为床位数]],
     tcell(rowspan: 2)[家具],
-    tcell(rowspan: 2)[卫生间],
+    tcell(rowspan: 2)[卫生间#fn(4)],
     tcell(rowspan: 2)[阳台],
     tcell(rowspan: 2)[楼层 / 电梯],
     tcell(rowspan: 2)[水电网供应],
@@ -94,10 +94,10 @@
   [
     单独一期工程修建，与 S1 \~ S5 无关
 
-    面积大于其他宿舍，家具更好，上下床走台阶而非爬梯子
+    单寝面积大于其他宿舍楼，家具也更好
   ],
 
-  dorm[#female[雁南 S5]\ #mixed[雁南 S4#fn(4)]\ #male[雁南 S3\ 雁南 S2]],
+  dorm[#female[雁南 S5]\ #mixed[雁南 S4#fn(5)]\ #male[雁南 S3\ 雁南 S2]],
   subtable(rows: (2em, 3em), columns: 6.5em, align: center, good[4], neutral[5 (6) 或 6]),
   subtable(rows: (2em, 3em), columns: 6.5em, align: center, good[上床下桌], neutral[
     床床#hide[#backlink("about:blank")[]] \
@@ -129,9 +129,9 @@
   good[2],
   good[上床下桌],
   neutral[公卫],
-  [少量房间#good[有]\ 其余为#neutral[假阳台]],
+  [仅有#neutral[假阳台]],
   neutral[5 层\ 无电梯],
-  [#bad[移动网络信号奇差]\ （校园网正常）],
+  [#bad[蜂窝信号奇差]\ （校园网正常）],
   bad[远],
   good[西门柜],
   bad[远\ #wip[楼浴尚未启用]],
@@ -142,33 +142,6 @@
   [
     使用沙河雁南换下的家具
   ],
-
-  dorm(mixed[学 8]),
-  [#female[本] 博],
-  tcell(rowspan: 2, good[4]),
-  tcell(rowspan: 2, good[上床下桌]),
-  tcell(rowspan: 2, neutral[独卫]),
-  tcell(rowspan: 2, good[有]),
-  tcell(rowspan: 2, neutral[12 层\ 2 部电梯]),
-  tcell(rowspan: 2, good[正常#quest]),
-  good[近],
-  neutral[北门柜],
-  [#neutral[近]\ #neutral[部分寝室有独浴]\ #bad[但无热水]],
-  neutral[中],
-  neutral[中],
-  tcell(rowspan: 2, [#quest\ 早于 2001]),
-  [1200],
-  tcell(rowspan: 2, [
-    部分房间地漏不可用，楼板渗水，搭配独浴和停水忘关水龙头有奇效
-  ]),
-  dorm(female[学 4\ （4 人间）]),
-  [  博],
-  neutral[中],
-  neutral[北门柜\ 西门柜],
-  [#neutral[中]\ #neutral[部分寝室有独浴]\ #bad[但无热水]],
-  neutral[中],
-  bad[远],
-  [850],
 
   dorm(wip[学 1]),
   tcell(colspan: 14, quest),
@@ -197,8 +170,8 @@
 
   dorm(male[学 13\ （4 人间）]),
   [ 硕 ],
-  [少量房间#good[有]\ 其余为#neutral[假阳台]],
-  [#bad[移动网络信号奇差]\ （校园网正常）],
+  [仅有#neutral[假阳台]],
+  [#bad[蜂窝信号奇差]\ （校园网正常）],
   bad[远],
   good[西门柜],
   bad[远\ #wip[楼浴尚未启用]],
@@ -207,10 +180,10 @@
   [750],
 
   dorm(female[学 29]),
-  [本硕博],
+  [#ruby[仅元][本]硕博],
   [8 人套间\ 每室 #good[2 \~ 4] 人],
   good[普通单层\ 床铺桌椅],
-  neutral[套间\ 卫生间\ （马桶）],
+  neutral[套间\ 卫生间\ （坐便）],
   good[有],
   neutral[20 层\ 2 部电梯],
   good[正常#quest],
@@ -236,7 +209,7 @@
   neutral[公卫],
   bad[无],
   neutral[5 层\ 无电梯],
-  bad[每天凌晨\ 停冲厕用中水],
+  bad[凌晨停冲厕中水],
   good[近],
   good[北门柜],
   neutral[中\ #wip[层浴尚未启用]],
@@ -248,24 +221,32 @@
     单寝面积很小
   ],
 
-  dorm(wip[学 6\ （4 人间）]),
-  [本  ],
-  good[4],
-  bad[上下铺],
-  bad[独卫],
-  [除#bad[一楼]外#good[有]],
-  bad[6 层\ 无电梯],
-  bad[随机停电\ 随机停冲厕用中水],
+  dorm(mixed[学 8]),
+  [#ruby[仅元][本] 博],
+  tcell(rowspan: 2, good[4]),
+  tcell(rowspan: 2, good[上床下桌]),
+  tcell(rowspan: 2, neutral[独卫]),
+  tcell(rowspan: 2, good[有]),
+  tcell(rowspan: 2, neutral[12 层\ 2 部电梯]),
+  tcell(rowspan: 2, good[正常#quest]),
   good[近],
-  good[科研楼柜],
-  neutral[近],
+  neutral[北门柜],
+  [#neutral[近]\ #neutral[部分寝室有独浴]\ #bad[但无热水]],
+  neutral[中],
+  neutral[中],
+  tcell(rowspan: 2, [#quest\ 早于 2001]),
+  [1200],
+  tcell(rowspan: 2, [
+    部分房间地漏不可用，楼板渗水，搭配独浴和停水忘关水龙头有奇效
+  ]),
+  dorm(female[学 4\ （4 人间）]),
+  [  博],
+  neutral[中],
+  neutral[北门柜\ 西门柜],
+  [#neutral[中]\ #neutral[部分寝室有独浴]\ #bad[但无热水]],
+  neutral[中],
   bad[远],
-  good[近],
-  [2003],
-  [1020],
-  [
-    将在一个月内 2024 级搬迁后实现，猜测直接由 4 人使用 3 张上下铺，人均空间较居住 6 人时大幅增加
-  ],
+  [850],
 
   dorm[#mixed[学 3]\ #male[学 5]],
   [#male[本]硕 ],
@@ -274,7 +255,7 @@
   bad[公卫],
   good[有],
   bad[15 层\ 2 部电梯],
-  bad[每天凌晨\ 停冲厕用中水],
+  bad[凌晨停冲厕中水],
   neutral[中],
   neutral[北门柜\ 西门柜],
   neutral[中],
@@ -305,10 +286,31 @@
   [900],
   [
     楼道内通风、采光差
+
+    无夜间门禁
+  ],
+
+  dorm(male[学 6\ （4 人间）]),
+  [本  ],
+  neutral[4 (6)],
+  bad[上下铺],
+  bad[独卫],
+  [除#bad[一楼]外#good[有]],
+  bad[6 层\ 无电梯],
+  bad[年均一次夏季停电],
+  good[近],
+  good[科研楼柜],
+  neutral[近],
+  bad[远],
+  good[近],
+  [2003],
+  [1020],
+  [
+    有翻修计划，正在方案设计阶段
   ],
 
   dorm(female[学 4\ （6 人间）]),
-  [本硕博],
+  [本硕 ],
   neutral[6],
   bad[上下铺],
   neutral[独卫],
@@ -335,7 +337,7 @@
   bad[独卫],
   [除#bad[一楼]外#good[有]],
   bad[6 层\ 无电梯],
-  bad[随机停电\ 随机停冲厕用中水],
+  bad[年均一次夏季停电],
   good[近],
   good[科研楼柜],
   neutral[近],
@@ -355,8 +357,9 @@
     [表中列出的所有#mixed[混寝]宿舍楼中性别混合的最小单位均为*楼层*。也即，不存在同一楼层内男女混住的情况。],
     [雁北 D2, E 楼为一个区域，内部部分连通，共用电梯。D2 楼借用 E 楼公卫、水房、浴室，可能需要前往其他层。],
     [雁北 A, B, C, D1 楼为一个区域，内部部分连通。该区域两部电梯均位于 D1 部分，A, B, C 楼需要借道；A, B 二楼与 A 六楼无法通过电梯到达，需要步行一层；B 楼和 D 楼借用位于 A 楼和 C 楼的各一套公卫、水房、浴室，可能需要前往其他层。],
-    [雁南 S4 虽理论上为混寝楼，但实际上女生住户归 S5 管理，通过 S5 楼门出入，并使用 S5 的水房、浴室等设施，和男生住户被物理隔断。#fn(5)],
-    [Fun fact：笔者本人曾为 S4 住户，且是某寝室的最后一届男住户。该寝室自我搬离后就被改造并入了女寝部分。],
+    [如无特别指出，该楼内大部分卫生间均为蹲便；部分楼也存在少量无障碍卫生间，使用坐便。],
+    [雁南 S4 虽理论上为混寝楼，但实际上女生住户归 S5 管理，通过 S5 楼门出入，并使用 S5 的水房、浴室等设施，和男生住户被物理隔断。#fn(6)],
+    [Fun fact：笔者本人曾为 S4 住户，且是某寝室的最后一届男住户。该寝室自笔者搬离后就被改造并入了女寝部分。],
   )
     .enumerate()
     .map(((n, it)) => fn(n + 1) + it),
@@ -375,11 +378,11 @@
 
 = 柏油 · #text(fill: tint)[宿舍]
 
-表格内只讨论绝大多数宿舍配置，不讨论占比较少的特殊房间。
+表格内只讨论绝大多数宿舍的配置，不讨论占比较少的特殊房间。
 
-目前有较多宿舍（如表中的 4 个灰色行）正在活跃建设或尚无住户，我们将在有消息的第一时间内更新。
+目前有较多宿舍（如表中的 3 个灰色行）正在活跃建设或尚无住户，我们将在有消息的第一时间内更新。
 
-本文档旨在提供信息而非斗个高低，因此不接受类似“某某宿舍排高了，应该往后放”的建议和批评——几乎所有人都觉得别人住得比自己好，笔者收到的大部分反馈只是纯粹的发牢骚。
+表格旨在提供信息而非斗个高低，因此不接受类似“某某宿舍排高了，应该往后放”的建议和批评——几乎所有人都觉得别人住得比自己好，笔者收到的大部分反馈只是纯粹的发牢骚。
 
 #{
   show: align.with(center + horizon)
@@ -412,6 +415,7 @@
   [- *学 3 大 6 人间*：], [更大的空间，无阳台，有超大落地窗],
   [- *学 4 10 人间*：], [10 人（5 张上下铺），多个房间，无阳台],
   [- *学 5 10 人间*：], [10 人（5 张上下铺），更大的空间，无阳台],
+  [- *学 6 套间*：], [由 3 个普通房间合成，另有一个客厅],
   [- *学 10 大 6 人间*：], [更大的空间],
   [- *学 13 有阳台房间*：], [2 人间和 4 人间均存在；阳台大小不一，同时兼有假阳台],
 )

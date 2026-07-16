@@ -11,7 +11,8 @@
 }
 
 #let spacing = (
-  line-leading: .25em,
+  line-leading-tight: .25em,
+  line-leading: .5em,
   par-spacing: .5em,
   indent: (all: true, amount: 2em),
 )

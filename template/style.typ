@@ -99,6 +99,7 @@
   set grid.hline(stroke: stroke)
   set grid.vline(stroke: stroke)
 
+  show table: set par(leading: spacing.line-leading-tight)
   set table.hline(stroke: stroke)
   set table.vline(stroke: stroke)
   set table(stroke: stroke, align: center + horizon, inset: (x: .5em, y: spacing.par-spacing))
