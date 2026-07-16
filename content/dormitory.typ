@@ -54,7 +54,7 @@
     tcell(rowspan: 3)[*住宿费#linebreak()#text(size: .7em)[元 / 学年]*],
     tcell(rowspan: 3)[*其他说明*\ #unknown[（欢迎补充）]],
     tcell(rowspan: 2)[近 5 年\ 住户类型],
-    tcell(rowspan: 2)[每室人数],
+    tcell(rowspan: 2)[每室人数\ #text(size: .7em)[括号内为床位数]],
     tcell(rowspan: 2)[家具],
     tcell(rowspan: 2)[卫生间],
     tcell(rowspan: 2)[阳台],
@@ -78,8 +78,8 @@
 
   dorm(female[雁南 S6]),
   tcell(rowspan: 5, [本硕博]),
-  tcell(rowspan: 5, good[4]),
-  tcell(rowspan: 5, good[上床下桌]),
+  good[4],
+  good[上床下桌],
   tcell(rowspan: 5, good[独卫\ +\ 公卫#fn(2)#fn(3)]),
   tcell(rowspan: 5, good[有]),
   tcell(rowspan: 3, good[6 层\ 有电梯]),
@@ -97,12 +97,21 @@
     面积大于其他宿舍，家具更好，上下床走台阶而非爬梯子
   ],
 
-  dorm(female[雁南 S5\ 雁南 S4\ （24 级前）]),
+  dorm[#female[雁南 S5]\ #mixed[雁南 S4#fn(4)]\ #male[雁南 S3\ 雁南 S2]],
+  subtable(rows: (2em, 3em), columns: 6.5em, align: center, good[4], neutral[5 (6) 或 6]),
+  subtable(rows: (2em, 3em), columns: 6.5em, align: center, good[上床下桌], neutral[
+    床床#hide[#backlink("about:blank")[]] \
+    床#backlink("https://baike.baidu.com/pic/TFBOYS/9083733/0/3c6d55fbb2fb4316390c99072da4462309f7d3b8")[桌] \
+  ],),
   [2016],
-  [900],
-  [仍有一部分 2024 级以上的女生居住，对应的房间维持使用原有上床下桌家具],
+  [1200#quest],
+  [
+    经历过临时 4 改 6 又改 4 的#ruby[折腾][风波]，目前保留的非 4 人间多为原寝主动选择维持原样，或为硕博研究生等待新楼建成一步到位搬迁
+  ],
 
   dorm[#male[雁北 E]\ #male[雁北 D2]],
+  tcell(rowspan: 3, good[4]),
+  tcell(rowspan: 3, good[上床下桌]),
   tcell(rowspan: 3)[2014],
   tcell(rowspan: 3)[1200],
   tcell(rowspan: 3)[
@@ -113,7 +122,7 @@
   [#male[雁北 B]\ #male[雁北 A]],
   neutral[6 层\ 部分有电梯#fn(3)],
 
-  本部-cell(rowspan: 11, body: [西土城\ 校区\ （校本部）]),
+  本部-cell(rowspan: 13, body: [西土城\ 校区\ （校本部）]),
 
   dorm(male[学 13\ （2 人间）]),
   [  博],
@@ -298,33 +307,6 @@
     楼道内通风、采光差
   ],
 
-  沙河-cell(x: 0, body: [沙河校区]),
-  dorm[#male[雁南 S2\ 雁南 S3]\ #mixed[雁南 S4]\ #female[雁南 S5]\ #mixed[（25 级）]],
-  [本硕博],
-  neutral[6],
-  neutral[
-    床床#hide[#backlink("about:blank")[]] \
-    床#backlink("https://baike.baidu.com/pic/TFBOYS/9083733/0/3c6d55fbb2fb4316390c99072da4462309f7d3b8")[桌] \
-  ],
-  good[独卫\ +\ 公卫#fn(2)],
-  good[有],
-  good[6 层\ 有电梯],
-  good[正常],
-  bad[远],
-  bad[小南门柜],
-  good[层浴],
-  [],
-  [],
-  [2016],
-  [900],
-  [
-    床位布局难以评价，床铺尺寸不统一
-
-    衷心希望新的宿舍楼能够早日建成以分担住宿压力，拯救水深火热中的雁南住户
-  ],
-
-  本部-cell(x: 0, rowspan: 2, body: [西土城\ 校区\ （校本部）]),
-
   dorm(female[学 4\ （6 人间）]),
   [本硕博],
   neutral[6],
@@ -373,6 +355,8 @@
     [表中列出的所有#mixed[混寝]宿舍楼中性别混合的最小单位均为*楼层*。也即，不存在同一楼层内男女混住的情况。],
     [雁北 D2, E 楼为一个区域，内部部分连通，共用电梯。D2 楼借用 E 楼公卫、水房、浴室，可能需要前往其他层。],
     [雁北 A, B, C, D1 楼为一个区域，内部部分连通。该区域两部电梯均位于 D1 部分，A, B, C 楼需要借道；A, B 二楼与 A 六楼无法通过电梯到达，需要步行一层；B 楼和 D 楼借用位于 A 楼和 C 楼的各一套公卫、水房、浴室，可能需要前往其他层。],
+    [雁南 S4 虽理论上为混寝楼，但实际上女生住户归 S5 管理，通过 S5 楼门出入，并使用 S5 的水房、浴室等设施，和男生住户被物理隔断。#fn(5)],
+    [Fun fact：笔者本人曾为 S4 住户，且是某寝室的最后一届男住户。该寝室自我搬离后就被改造并入了女寝部分。],
   )
     .enumerate()
     .map(((n, it)) => fn(n + 1) + it),
