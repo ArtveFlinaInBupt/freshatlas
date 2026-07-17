@@ -1,5 +1,7 @@
 #import "/template/model.typ": *
 
+#import "icon.typ": subway
+
 // 参考北京市地方标准 DB11/T 657.2—2024《公共交通客运标志——第 2 部分：城市轨道交通》附录 B。
 // 一方面 Typst 对 CMYK 的支持不佳；另一方面标准中给出的 CMYK 颜色值与实际疑似有较大偏差。因此，以下颜色均采用 RGB 模式近似表示。
 #let Beijing-subway-data = (
@@ -14,6 +16,11 @@
   "4": (
     background: color.spot("PANTONE 321 C", rgb(0, 140, 149)), // cmyk(100%, 6%, 0%, 42%)
     name: "4",
+  ),
+  "7": (
+    background: color.spot("PANTONE 1355 C", rgb(255, 197, 110)), // cmyk(0%, 23%, 57%, 0%)
+    dark-foreground: true,
+    name: "7",
   ),
   "8": (
     background: color.spot("PANTONE 3278 C", rgb(0, 155, 119)), // cmyk(100%, 0%, 23%, 39%)
@@ -35,6 +42,15 @@
     background: color.spot("PANTONE 7404 C", rgb(244, 218, 64)), // cmyk(5%, 5%, 90%, 0%)
     dark-foreground: true,
     name: "13",
+  ),
+  "14": (
+    background: color.spot("PANTONE 7612 C", rgb(202, 154, 142)), // cmyk(0%, 24%, 30%, 21%)
+    dark-foreground: true,
+    name: "14",
+  ),
+  "16": (
+    background: color.spot("PANTONE 7737 C", rgb(107, 165, 57)), // cmyk(35%, 0%, 65%, 35%)
+    name: "16",
   ),
   "18": (
     background: color.spot("PANTONE 2725 C", rgb(104, 91, 199)), // cmyk(48%, 54%, 0%, 22%)
@@ -75,7 +91,7 @@
   let item = get-subway-data(name)
   box(
     fill: item.background.tint(100%),
-    inset: (x: .15em),
+    inset: (x: .25em),
     outset: (y: .25em),
     radius: .25em,
     text(font: font.sans, fill: item.foreground, item.name),
