@@ -3,6 +3,7 @@
 
 #import "model/color.typ": secondary-color, 本部-color
 #import "model/subway.typ": get-subway
+#import "model/icon.typ": cr, subway
 #import "model/campus-cell.typ": *
 
 #let tint = 本部-color.foreground
@@ -221,13 +222,13 @@
 
     近几年正在大力活跃翻修，几个最差的寝室楼一跃而上成为了如今最好的。
   ][
-    位于三环以内，紧邻北三环，距二环（铁路#proper[北京北站]）约 #qty[2][km]。周边有超多商圈。
+    位于三环以内，紧邻北三环，距二环（#cr[北京北站]）约 #qty[2][km]。周边有超多商圈。
 
     与#proper[北师大]隔街相望；距#("北航", "央财", "交大", "法大", "电影学院").map(proper).join("、")、#proper[北大医学部]（#proper[北医三院]）*等*均短于 #qty[3][km]；北航以北是学院路 8 校。
 
     距#proper[字节跳动总部（抖音大楼）]约 #qty[1.5][km]，距#proper[中关村]核心区约 #qty[5][km]。
 
-    距地铁#proper[蓟门桥]站约 #qty[200][m]，距地铁#("北太平庄", "西土城", "大钟寺").map(it => proper(it) + "站").join("、")、#proper[四道口]站（在建）均短于 #qty[1.5][km]，涉及地铁 #get-subway(10) #get-subway(12) #get-subway(13) #get-subway(19) #get-subway(27)，线路非常优质。
+    距地铁#subway[蓟门桥站]约 #qty[200][m]，距#("北太平庄", "西土城", "大钟寺").map(it => subway(it) + "站").join("、")、#subway[四道口站（在建）]均短于 #qty[1.5][km]，涉及地铁 #get-subway(10) #get-subway(12) #get-subway(13) #get-subway(19) #get-subway(27)，线路非常优质。
   ][
     校内的连锁品牌：
 
@@ -245,7 +246,7 @@
   ][
     周边稍显荒凉，外来人口众多，主要为居民区，以及#("外交学院", "北航", "北师大", "央财").map(proper).join("、")等众多高校的沙河校区，也有少量商圈。
 
-    距地铁#get-subway(27)#proper[沙河]站、#proper[沙河高教园]站均短于 #qty[1][km]。
+    距地铁#get-subway(27)#subway[沙河站]、#subway[沙河高教园站]均短于 #qty[1][km]。
 
     #沙河-styled[沙河校区]和#本部-styled[西土城校区]之间单程乘地铁需 #qty[1][h] 以上（其中列车运行 #qty[40][min]），乘免费班车最快约 #qty[30][min]，实际耗时可能因路况增加（例如遇早晚高峰、雨雪天气）。
   ][
