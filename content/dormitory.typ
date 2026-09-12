@@ -103,7 +103,7 @@
     align: (x, y) => if y == 0 { center + horizon } else { all-columns.values().at(x).align },
     table.header(
       [*所在校区*],
-      [*宿舍楼*\ #text(size: .7em)[旧名 \[新名 (如有)\]]],
+      [*宿舍楼*\ #text(size: .7em)[现行名 \[曾用名 (如有)\]]],
       [*近 5 年\ 住户类型*],
       [*每室人数*\ #text(size: .7em)[括号内为床位数]],
       [*家具*],
@@ -116,8 +116,8 @@
       楼名: wip({
         let box = box.with(baseline: (at: horizon, shift: -font.axis-height))
         $
-          #box[研究生 A1\ 研究生 A2\ 研究生 B1\ 研究生 B2\ 研究生 B3]
-          [#box[雁西 1 号楼\ 雁西 2 号楼\ 雁西 3 号楼\ 雁西 4 号楼\ 雁西 5 号楼\ 雁西 6 号楼]]
+          #box[雁西 1 号楼\ 雁西 2 号楼\ 雁西 3 号楼\ 雁西 4 号楼\ 雁西 5 号楼\ 雁西 6 号楼]
+          [#box[研究生 A1\ 研究生 A2\ 研究生 B1\ 研究生 B2\ 研究生 B3\ 研究生 B4]]
         $
       }),
       住户: (wip[  博], wip[本硕 ]),
@@ -128,22 +128,22 @@
     ..dormitory(
       rows: 4,
       楼名: (
-        female[雁南 S6 \[雁南 5 号楼\]],
+        female[雁南 5 号楼 \[雁南 S6\]],
         [
-          #female[雁南 S5 \[雁南 4 号楼\]] \
-          #male[雁南 S4 \[雁南 3 号楼\]] \
-          #male[雁南 S3 \[雁南 2 号楼\]] \
-          #male[雁南 S2 \[雁南 1 号楼\]] \
+          #female[雁南 4 号楼 \[雁南 S5\]] \
+          #male[雁南 3 号楼 \[雁南 S4\]] \
+          #male[雁南 2 号楼 \[雁南 S3\]] \
+          #male[雁南 1 号楼 \[雁南 S2\]] \
         ],
         [
-          #male[雁北 E \[雁北 6 号楼\]] \
-          #male[雁北 D2 \[雁北 5 号楼\]] \
+          #male[雁北 6 号楼 \[雁北 E\]] \
+          #male[雁北 5 号楼 \[雁北 D2\]] \
         ],
         [
-          #male[雁北 D1 \[雁北 4 号楼\]] \
-          #male[雁北 C \[雁北 3 号楼\]] \
-          #male[雁北 B \[雁北 2 号楼\]] \
-          #male[雁北 A \[雁北 1 号楼\]] \
+          #male[雁北 4 号楼 \[雁北 D1\]] \
+          #male[雁北 3 号楼 \[雁北 C\]] \
+          #male[雁北 2 号楼 \[雁北 B\]] \
+          #male[雁北 1 号楼 \[雁北 A\]] \
         ],
       ),
       住户: [本硕博],
@@ -252,7 +252,7 @@
     align: (x, y) => if y == 0 { center + horizon } else { all-columns.values().at(x).align },
     table.header(
       tcell(rowspan: 2)[*所在校区*],
-      tcell(rowspan: 2)[*宿舍楼*\ #text(size: .7em)[旧名 \[新名 (如有)\]]],
+      tcell(rowspan: 2)[*宿舍楼*\ #text(size: .7em)[现行名 \[曾用名 (如有)\]]],
       tcell(colspan: 4)[*楼内配置*],
       tcell(colspan: 3)[*外部距离*],
       tcell(colspan: 7)[*楼内设施数量*],
@@ -568,22 +568,22 @@
       rows: 8,
       楼名: (
         [
-          #male[雁北 A \[雁北 1 号楼\]] \
-          #male[雁北 D1 \[雁北 4 号楼\]] \
+          #male[雁北 1 号楼 \[雁北 A\]] \
+          #male[雁北 4 号楼 \[雁北 D1\]] \
         ],
         [
-          #male[雁北 B \[雁北 2 号楼\]] \
-          #male[雁北 C \[雁北 3 号楼\]] \
+          #male[雁北 2 号楼 \[雁北 B\]] \
+          #male[雁北 3 号楼 \[雁北 C\]] \
         ],
         [
-          #male[雁北 D2 \[雁北 5 号楼\]] \
-          #male[雁北 E \[雁北 6 号楼\]] \
+          #male[雁北 5 号楼 \[雁北 D2\]] \
+          #male[雁北 6 号楼 \[雁北 E\]] \
         ],
-        male[雁南 S2 \[雁南 1 号楼\]],
-        male[雁南 S3 \[雁南 2 号楼\]],
-        male[雁南 S4 \[雁南 3 号楼\]],
-        female[雁南 S5 \[雁南 4 号楼\]],
-        female[雁南 S6 \[雁南 5 号楼\]],
+        male[雁南 1 号楼 \[雁南 S2\]],
+        male[雁南 2 号楼 \[雁南 S3\]],
+        male[雁南 3 号楼 \[雁南 S4\]],
+        female[雁南 4 号楼 \[雁南 S5\]],
+        female[雁南 5 号楼 \[雁南 S6\]],
       ),
       卫生间: good[独卫\ +\ 公卫#fn(2)#fn(3)],
       阳台: good[有],
