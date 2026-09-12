@@ -34,8 +34,21 @@
   )
 }
 
-#let footnote-numbered(n) = super(numbering("*", n))
-#let fn = footnote-numbered
+// NOTE: This can be implemented in a more elegant way (using figure or third-party module like elembic), but at this time I am lazy to do so.
+#let fn-factory(name) = {
+  let footnote-numbered(n) = super(numbering("*", n))
+
+  let note(n: none) = {
+    context footnote-numbered(if n != none { n } else { 1 + counter(name).get().first() })
+    if n == none {
+      counter(name).step()
+    }
+  }
+
+  let notes(..args) = args.pos().enumerate().map(((n, it)) => note(n: n + 1) + it)
+
+  return (note: note, notes: notes)
+}
 
 // Copied from 大邮数学集, with modifications.
 #let fancy(colors, body) = {

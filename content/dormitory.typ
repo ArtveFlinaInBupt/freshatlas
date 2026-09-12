@@ -8,6 +8,7 @@
 #import "model/campus-cell.typ": 本部-cell, 沙河-cell
 
 #let tint = mixed-color
+#let (note, notes) = fn-factory("dormitory")
 
 #show: show-body.with(tint: tint)
 
@@ -28,7 +29,7 @@
   table.header[*性别图例*],
   male[男],
   female[女],
-  [#mixed[混合]#fn(1)],
+  [#mixed[混合]#note()],
   wip[无住户],
 )
 #let 好坏图例 = table(
@@ -260,7 +261,7 @@
       tcell(rowspan: 2)[*住宿费*\ #text(size: .7em)[元 / 学年]],
       tcell(rowspan: 2)[*其他说明*\ #unknown[（欢迎补充）]],
 
-      tcell[卫生间#fn(4)],
+      tcell[卫生间#note()],
       tcell[阳台],
       tcell[楼层 / 电梯],
       tcell[水电网供应],
@@ -585,16 +586,16 @@
         female[雁南 4 号楼 \[雁南 S5\]],
         female[雁南 5 号楼 \[雁南 S6\]],
       ),
-      卫生间: good[独卫\ +\ 公卫#fn(2)#fn(3)],
+      卫生间: good[独卫\ +\ 公卫#note(n: 3)#note()],
       阳台: good[有],
       楼层: (
-        (rows: 2, body: neutral[6 层\ 部分有电梯#fn(3)]),
+        (rows: 2, body: neutral[6 层\ 部分有电梯#note()]),
         (rows: 6, body: good[6 层\ 有电梯]),
       ),
       水电网: good[正常],
       快递站: ((rows: 3, body: neutral[中]), (rows: 5, body: good[近])),
       外卖柜: bad[小南门柜],
-      浴室: good[层浴#fn(2)],
+      浴室: good[层浴#note(n: 3)#note(n: 4)],
       浴室隔间数: ([78], [78], [78], [66], [54], [54], [108], [114]),
       水机数: ([6], [8], [10], [6], [6], [6], [12], [12]),
       自习室数: ([10], [4], [7], [], [], [5], [4], [5]),
@@ -662,14 +663,12 @@
 #let 表格注 = stack(
   dir: ttb,
   spacing: spacing.par-spacing,
-  ..(
+  ..notes(
     [表中列出的所有#mixed[混寝]宿舍楼中性别混合的最小单位均为*楼层*。也即，不存在同一楼层内男女混住的情况。],
+    [如无特别指出，则该楼内大部分卫生间均为蹲便；部分楼低层也设无障碍卫生间，使用坐便。],
     [雁北 D2, E 楼为一个区域，内部部分连通，共用电梯。D2 楼借用 E 楼公卫、水房、浴室，可能需要前往其他层。],
     [雁北 A, B, C, D1 楼为一个区域，内部部分连通。该区域两部电梯均位于 D1 部分，A, B, C 楼需要借道；A, B 二楼与 A 六楼无法通过电梯到达，需要步行一层；B 楼和 D 楼借用位于 A 楼和 C 楼的各一套公卫、水房、浴室，可能需要前往其他层。],
-    [如无特别指出，则该楼内大部分卫生间均为蹲便；部分楼低层也设无障碍卫生间，使用坐便。],
-  )
-    .enumerate()
-    .map(((n, it)) => fn(n + 1) + it),
+  ),
 )
 
 #let 好坏条 = stack(

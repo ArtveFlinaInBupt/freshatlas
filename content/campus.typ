@@ -7,6 +7,7 @@
 #import "model/campus-cell.typ": *
 
 #let tint = 本部-color.foreground
+#let (note, notes) = fn-factory("campus")
 
 #show: show-body.with(tint: tint)
 
@@ -69,7 +70,7 @@
     fill: (
       沙河-cell(),
       沙河-cell(),
-      沙河-cell(body: [沙#fn(2)]),
+      沙河-cell(body: [沙#note()]),
       沙河-cell(),
       沙河-cell(),
     ),
@@ -291,13 +292,15 @@
         tcell(rowspan: 3)[*校区*\ （学院楼）],
         tcell(rowspan: 3)[*依据*],
         tcell(colspan: 4)[本科生],
-        tcell(rowspan: 2)[研究生#fn(1)],
+        tcell(rowspan: 2)[研究生#note()],
         [大一], [大二], [大三], [大四],
       ),
       ..data.map(gen-row-data).flatten(),
     ),
-    [#fn(1)曾经所有#沙河-styled[沙河校区]的研究生须在毕业年级回迁#本部-styled[本部]，但自 2025 年起似乎不再有该要求。],
-    [#fn(2)人文学院法学专业联培学生大三学年前往中国政法大学参与联合培养。],
+    ..notes(
+      [曾经所有#沙河-styled[沙河校区]的研究生须在毕业年级回迁#本部-styled[本部]，但自 2025 年起似乎不再有该要求。],
+      [人文学院法学专业联培学生大三学年前往中国政法大学参与联合培养。],
+    ),
   ),
 )
 
@@ -322,7 +325,7 @@
 
     - 所有（位于北京的）本科新生都在#沙河-styled[沙河校区]；
     - 本科生以学院为单位可能在某个时间点后回迁#本部-styled[本部]；
-    - 研究生以学院为单位倾向于分配在同一校区#fn(1)。
+    - 研究生以学院为单位倾向于分配在同一校区#note(n: 1)。
 
     #figure(详表)
   ],
