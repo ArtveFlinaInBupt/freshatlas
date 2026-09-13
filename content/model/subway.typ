@@ -64,17 +64,21 @@
   "27": (
     background: color.spot("PANTONE 673 C", rgb(217, 134, 186)), // cmyk(10%, 60%, 0%, 0%)
     name: "昌平线",
+    name-long: "昌平线",
   ),
   "34": (
     background: color.spot("PANTONE 666 C", rgb(161, 146, 178)), // cmyk(10%, 18%, 0%, 30%)
     name: "首都机场线",
+    name-long: "首都机场线",
   ),
   "35": (
     background: color.spot("PANTONE 2728 C", rgb(0, 71, 187)), // cmyk(100%, 62%, 0%, 27%)
     name: "大兴机场线",
+    name-long: "大兴机场线",
   ),
 ).map(line => (
   ..line,
+  name-long: line.at("name-long", default: line.name + "号线"),
   cjk: line.name.contains("线"), // currently no need to match with regex
   foreground: if line.at("dark-foreground", default: false) {
     rgb(0, 51, 128) // cmyk(100%, 60%, 0%, 50%)
@@ -87,13 +91,13 @@
 
 #let get-subway-color(name) = get-subway-data(name).background.tint(100%)
 
-#let get-subway(name) = {
+#let get-subway(name, long: false) = {
   let item = get-subway-data(name)
   box(
     fill: item.background.tint(100%),
     inset: (x: .25em),
     outset: (y: .25em),
     radius: .25em,
-    text(font: font.sans, fill: item.foreground, item.name),
+    text(font: font.sans, fill: item.foreground, if long { item.name-long } else { item.name }),
   )
 }
