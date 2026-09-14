@@ -1,3 +1,5 @@
+#import "/template/model.typ": font
+
 #let BUPT-VI-color = (
   /// 真正的 PANTONE 661 C 是 cmyk(100%, 64%, 0%, 42%) 或 rgb #003594
   /// 官方 VI 给出的是 cmyk(100%, 60%, 0%, 0%) 或 rgb #1b45a2
@@ -36,3 +38,11 @@
 
 #let placement-color = olive.darken(25%)
 #let level-color = orange.darken(25%)
+
+#let badge(background: none, foreground: none, body) = box(
+  fill: background,
+  inset: (x: .25em),
+  outset: (y: .25em),
+  radius: .25em,
+  text(font: font.sans, fill: foreground, body),
+)

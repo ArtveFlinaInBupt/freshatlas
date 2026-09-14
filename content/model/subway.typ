@@ -1,6 +1,6 @@
 #import "/template/model.typ": *
 
-#import "icon.typ": subway
+#import "color.typ": badge
 
 // 参考北京市地方标准 DB11/T 657.2—2024《公共交通客运标志——第 2 部分：城市轨道交通》附录 B。
 // 一方面 Typst 对 CMYK 的支持不佳；另一方面标准中给出的 CMYK 颜色值与实际疑似有较大偏差。因此，以下颜色均采用 RGB 模式近似表示。
@@ -48,6 +48,10 @@
     dark-foreground: true,
     name: "14",
   ),
+  "15": (
+    background: color.spot("PANTONE 7664 C", rgb(101, 51, 121)), // cmyk(17%, 58%, 0%, 53%)
+    name: "15",
+  ),
   "16": (
     background: color.spot("PANTONE 7737 C", rgb(107, 165, 57)), // cmyk(35%, 0%, 65%, 35%)
     name: "16",
@@ -93,11 +97,9 @@
 
 #let get-subway(name, long: false) = {
   let item = get-subway-data(name)
-  box(
-    fill: item.background.tint(100%),
-    inset: (x: .25em),
-    outset: (y: .25em),
-    radius: .25em,
-    text(font: font.sans, fill: item.foreground, if long { item.name-long } else { item.name }),
+  badge(
+    background: item.background.tint(100%),
+    foreground: item.foreground,
+    if long { item.name-long } else { item.name },
   )
 }
