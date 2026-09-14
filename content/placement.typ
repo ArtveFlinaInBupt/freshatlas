@@ -60,10 +60,10 @@
 
   [20 级], [没考！], [全都不许考], [不分班],
 
-  [21 级], [线下纸笔], tcell(rowspan: 5)[前 1000 名], tcell(rowspan: 2)[ABCD 班],
+  [21 级], [线下纸笔], tcell(rowspan: 6)[前 1000 名], tcell(rowspan: 2)[ABCD 班],
 
   [22 级],
-  tcell(rowspan: 4)[线上机考],
+  tcell(rowspan: 5)[线上机考],
   tcell(rowspan: 2, text(fill: gray)[混乱\ 无参考价值]),
   tcell(rowspan: 4)[不分班\ 且全员有四级资格\ 因此考试毫无作用],
 
@@ -76,7 +76,7 @@
 
   [25 级],
 
-  [26 级], tcell(colspan: 6)[#quest],
+  [26 级], tcell(colspan: 4)[#quest],
 ))
 
 必须指出，虽然#level[分级教学]客观存在，但#level[其]出发点和结果均非限制同学们的学习资源和分数——完全没有必要担心#level[分级]结果对自己未来的影响（实际上确实不会产生什么影响）。
