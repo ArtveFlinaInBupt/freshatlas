@@ -14,7 +14,7 @@
 
 ### 依赖
 
-- [Typst](https://github.com/typst/typst) 0.15.0
+- [Typst](https://github.com/typst/typst) 0.15.1
 - GNU Make
 - 字体（也可在 GitHub Actions workflow file 中自行找到）
   - 衬线体
@@ -23,6 +23,7 @@
   - 非衬线体：[思源黑体 (Source Han Sans SC)](https://github.com/adobe-fonts/source-han-sans)
   - 数学：[STIX Two Math](https://github.com/stipub/stixfonts)
   - 等宽：[Fira Code](https://github.com/tonsky/FiraCode)
+  - 图标：[Font Awesome](https://github.com/fortawesome/font-awesome)
 
 ### 编译
 
@@ -42,9 +43,22 @@ make
 - 为什么没有海南校区的宿舍信息？
   - 目前没有可靠的信息来源。若您能调研得到完整可靠信息，欢迎提供。
 
-## 其他
+## Licensing
 
 若需修改或二次创作，请自行阅读源码。
 
 - 源码采用 [GPL v3](https://www.gnu.org/licenses/gpl-3.0.html) 协议。
 - PDF、图片等产物采用 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 协议。
+- 简化版北京地铁线路图使用[地铁线路图绘制器](https://railmapgen.org/)绘制。
+
+## 已知问题
+
+- Typst 编译报 warning：
+  
+  ```
+  warning: glyph has assembly parts with overlap less than minConnectorOverlap
+   = hint: its rendering may appear broken - this is probably a font bug
+   = hint: please file an issue at https://github.com/typst/typst/issues
+  ```
+
+  该问题早已 filed issue at [typst/typst #7999](https://github.com/typst/typst/issues/7999) 并在 20 分钟内被直接 close。Typst 的 maintainer 认为这是字体问题，但他们并未在 0.15 中更改编译器的 warning 行为或文本。
