@@ -1,13 +1,11 @@
-lang ?= en
+lang ?= zh
 
-ifeq ($(lang), en)
-	pdf_name := BUPT-freshatlas-
-else ifeq ($(lang), zh)
-	pdf_name := 柏油图谱
-else
-	$(error "Unsupported language: $(lang). Supported languages are 'en' and 'zh'.")
+# 仅校验语言合法性，不再参与 pdf 命名
+ifneq ($(filter $(lang),en zh),$(lang))
+$(error "Unsupported language: $(lang). Supported languages are 'en' and 'zh'.")
 endif
 
+prefix := freshatlas-
 srcs := overview|总览 dormitory|宿舍 campus|校区 placement|入学考试 commute|通勤
 
 date := $(shell date +%y%m%d)
@@ -15,7 +13,7 @@ src_dir := content
 out_dir := out
 main_src := main.typ
 
-target_pdf := $(out_dir)/$(pdf_name)$(date).pdf
+target_pdf := $(out_dir)/$(prefix)$(date).pdf
 
 COMPILE := typst compile --root . --input release=
 
@@ -30,9 +28,9 @@ pdf: $(out_dir)
 stem = $(firstword $(subst |, ,$1))
 
 ifeq ($(lang), en)
-	png_name = BUPT-$(call stem,$1)-
+	png_name = $(prefix)$(call stem,$1)-
 else
-	png_name = 柏油$(lastword $(subst |, ,$1))
+	png_name = $(prefix)$(lastword $(subst |, ,$1))-
 endif
 
 target_pngs := $(foreach s,$(srcs),$(out_dir)/$(call png_name,$s)$(date).png)
