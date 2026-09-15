@@ -15,7 +15,7 @@ main_src := main.typ
 
 target_pdf := $(out_dir)/$(prefix)$(date).pdf
 
-COMPILE := typst compile --root . --input release=
+COMPILE := typst compile --root . --no-pdf-tags --input release=
 
 all: pdf png
 
