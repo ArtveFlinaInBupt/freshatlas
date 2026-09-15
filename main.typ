@@ -1,4 +1,5 @@
 #{
+  counter(page).update(())
   include "content/outline.typ"
   include "content/overview.typ"
   include "content/campus.typ"

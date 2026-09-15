@@ -87,8 +87,8 @@
         dir: ltr,
         spacing: .5em / phi,
         box(fill: tint, height: 1em, width: 1em / phi),
-        if not sys.inputs.at("single", default: none) == "true" {
-          counter(page).display()
+        if not sys.inputs.at("single", default: none) == "true" and page.numbering != none {
+          counter(page).display(page.numbering)
         },
       )
     }
@@ -125,6 +125,7 @@
     height: auto,
     width: auto,
     margin: 4em,
+    numbering: "1",
     footer: text(fill: gray, grid(
       columns: (auto, 1fr, auto),
       align: (x, y) => (left, center, right).at(x) + horizon,
