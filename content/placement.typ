@@ -4,6 +4,7 @@
 #import "model/color.typ": level-color, placement-color, unknown-color
 
 #let tint = placement-color
+#let (note, notes) = fn-factory("placement")
 
 #show: show-body.with(tint: tint)
 
@@ -21,7 +22,7 @@
   )
 })
 
-#set page(width: 60em)
+#set page(width: 75em)
 
 = 柏油 · #text(fill: tint)[入学考试]
 
@@ -31,52 +32,61 @@
 
 另注：虽然一般认为#{ 两者 }有关，但是由于#placement[考试结果]的黑箱性质，没有确凿的证据表明#{ 两者 }存在依据或唯一依据关系。事实上，在 23 级以前，部分专业会根据每个同学的高考数学成绩在省内的排名直接指派选修数学分析或高等数学。一方面既已有此先例，另一方面线上考试形式不严肃，结果意义有限，我们认为#level[后者]可能也会参考高考英语成绩。
 
-#figure(table(
-  columns: 7,
-  inset: (x: 1em, y: .5em),
+#figure(grid(
+  align: left,
+  row-gutter: spacing.par-spacing,
+  table(
+    columns: 8,
+    inset: (x: 1em, y: .5em),
 
-  // @typstyle off
-  table.header(
+    // @typstyle off
+    table.header(
     tcell(rowspan: 2)[*年级*],
     tcell(rowspan: 2)[*考试形式*],
     tcell(rowspan: 2)[#level[*第一学期\ 四级资格*]],
-    tcell(colspan: 4)[#level[*英语课分班形式*]],
+    tcell(colspan: 5)[#level[*英语课分班形式*]],
     [大部分专业],
-    [元班],
+    [计算机学院],
+    [元班#note()],
     [国际学院],
     [玛丽女王海南学院],
   ),
 
-  [19 级],
-  [线下纸笔],
-  [前 1000 名],
-  [
-    大部分进入普通班 \
-    倒数若干名单开班 \
-  ],
-  tcell(rowspan: 3)[#text(fill: gray)[尚未成立]],
-  tcell(rowspan: 5)[不分班#quest],
-  tcell(rowspan: 3)[#text(fill: gray)[尚未成立]],
+    [19 级],
+    [线下纸笔],
+    [前 1000 名],
+    tcell(colspan: 2)[
+      大部分进入普通班 \
+      倒数若干名单开班 \
+    ],
+    tcell(rowspan: 3)[#text(fill: gray)[尚未成立]],
+    tcell(rowspan: 5)[不分班#quest],
+    tcell(rowspan: 3)[#text(fill: gray)[尚未成立]],
 
-  [20 级], [没考！], [全都不许考], [不分班],
+    [20 级], [没考！], [全都不许考], tcell(colspan: 2)[不分班],
 
-  [21 级], [线下纸笔], tcell(rowspan: 6)[前 1000 名], tcell(rowspan: 2)[ABCD 班],
+    [21 级], [线下纸笔], tcell(rowspan: 6)[前 1000 名], tcell(rowspan: 2, colspan: 2)[ABCD 班],
 
-  [22 级],
-  tcell(rowspan: 5)[线上机考],
-  tcell(rowspan: 2, text(fill: gray)[混乱\ 无参考价值]),
-  tcell(rowspan: 4)[不分班\ 且全员有四级资格\ 因此考试毫无作用],
+    [22 级],
+    tcell(rowspan: 5)[线上机考],
+    tcell(rowspan: 2, text(fill: gray)[混乱\ 无参考价值]),
+    tcell(rowspan: 5)[不分班\ 且全员有四级资格\ 因此考试毫无作用],
 
-  [23 级], [ABC 班],
+    [23 级], tcell(colspan: 2)[ABC 班],
 
-  [24 级],
-  tcell(rowspan: 2)[AB 班],
-  tcell(rowspan: 2)[AB 班\ （单独分班）],
-  tcell(rowspan: 2)[ABC 班],
+    [24 级],
+    tcell(rowspan: 2, colspan: 2, stroke: (bottom: none))[AB 班],
+    tcell(rowspan: 2)[AB 班\ （单独分班）],
+    tcell(rowspan: 3)[ABC 班],
 
-  [25 级],
+    [25 级],
 
-  [26 级], tcell(colspan: 4)[#quest],
+    [26 级],
+    tcell(stroke: (top: none), none),
+    [在 AB 班课中自选\ 不参考#placement[考试结果]],
+    [不分班],
+  ),
+  ..notes[特别指出：不是整个未来学院。],
 ))
 
 必须指出，虽然#level[分级教学]客观存在，但#level[其]出发点和结果均非限制同学们的学习资源和分数——完全没有必要担心#level[分级]结果对自己未来的影响（实际上确实不会产生什么影响）。
